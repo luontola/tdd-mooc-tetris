@@ -14,7 +14,8 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.4.0"
+    "mocha": "^8.4.0",
+    "prettier": "^2.3.0"
   },
   "engines": {
     "node": ">= 14.0.0"
@@ -25,6 +26,7 @@
   },
   "scripts": {
     "test": "mocha 'test/**/*.test.js'",
-    "autotest": "npm run test -- --watch"
+    "autotest": "npm run test -- --watch",
+    "format": "prettier --write ."
   }
 }
