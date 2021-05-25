@@ -1,0 +1,30 @@
+{
+  "name": "tdd-mooc-tetris",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "Exercise for learning Test-Driven Development",
+  "homepage": "https://github.com/luontola/tdd-mooc-tetris",
+  "author": "Esko Luontola (http://luontola.fi)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luontola/tdd-mooc-tetris.git"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.4.0"
+  },
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "type": "module",
+  "mocha": {
+    "parallel": true
+  },
+  "scripts": {
+    "test": "mocha 'test/**/*.test.js'",
+    "autotest": "npm run test -- --watch"
+  }
+}
