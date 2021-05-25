@@ -3,7 +3,10 @@
   "version": "1.0.0-SNAPSHOT",
   "description": "Exercise for learning Test-Driven Development",
   "homepage": "https://github.com/luontola/tdd-mooc-tetris",
-  "author": "Esko Luontola (http://luontola.fi)",
+  "author": {
+    "name": "Esko Luontola",
+    "url": "https://www.luontola.fi"
+  },
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
