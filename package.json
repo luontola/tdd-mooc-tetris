@@ -12,6 +12,7 @@
     "type": "git",
     "url": "https://github.com/luontola/tdd-mooc-tetris.git"
   },
+  "private": true,
   "dependencies": {
     "lodash": "^4.17.15"
   },
