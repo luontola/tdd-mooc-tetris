@@ -46,4 +46,32 @@ describe("Falling blocks", () => {
       expect(after).to.eq(before);
     });
   });
+
+  describe("When a block reaches the bottom", () => {
+    beforeEach(() => {
+      board.drop("X");
+      board.tick();
+      board.tick();
+    });
+
+    it("it is still moving on the last row", () => {
+      expect(board.toString()).to.look(
+        `...
+         ...
+         .X.`
+      );
+      expect(board.hasFalling()).to.be.true;
+    });
+
+    xit("it stops when it hits the bottom", () => {
+      board.tick();
+
+      expect(board.toString()).to.look(
+        `...
+         ...
+         .X.`
+      );
+      expect(board.hasFalling()).to.be.false;
+    });
+  });
 });

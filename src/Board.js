@@ -1,7 +1,7 @@
 export class Board {
   #width;
   #height;
-  #fallingBlock;
+  #fallingBlock = null;
   #fallingRow;
   #fallingCol;
 
@@ -20,7 +20,16 @@ export class Board {
   }
 
   tick() {
-    this.#fallingRow++;
+    if (this.#fallingRow < this.#height - 1) {
+      this.#fallingRow++;
+    } else {
+      // TODO: stop the block
+      //this.#fallingBlock = null;
+    }
+  }
+
+  hasFalling() {
+    return this.#fallingBlock !== null;
   }
 
   toString() {
