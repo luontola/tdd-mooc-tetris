@@ -63,7 +63,7 @@ describe("Falling blocks", () => {
       expect(board.hasFalling()).to.be.true;
     });
 
-    xit("it stops when it hits the bottom", () => {
+    it("it stops when it hits the bottom", () => {
       board.tick();
 
       expect(board.toString()).to.look(

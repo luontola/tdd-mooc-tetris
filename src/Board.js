@@ -30,9 +30,13 @@ export class Board {
     if (this.#fallingRow < this.#height - 1) {
       this.#fallingRow++;
     } else {
-      // TODO: stop the block
-      //this.#fallingBlock = null;
+      this.#stopFalling();
     }
+  }
+
+  #stopFalling() {
+    this.#immobile[this.#fallingRow][this.#fallingCol] = this.#fallingBlock;
+    this.#fallingBlock = null;
   }
 
   hasFalling() {
