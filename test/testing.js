@@ -1,11 +1,7 @@
 import { Assertion, expect } from "chai";
 
 export function normalize(s) {
-  return s
-    .split("\n")
-    .map((line) => line.trim())
-    .join("\n")
-    .trim();
+  return s.replaceAll(" ", "").trimEnd();
 }
 
 it("normalize", () => {
