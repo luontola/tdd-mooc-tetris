@@ -27,11 +27,15 @@ export class Board {
   }
 
   tick() {
-    if (this.#fallingRow < this.#height - 1) {
-      this.#fallingRow++;
-    } else {
+    if (this.#fallingBlockWouldHitFloor()) {
       this.#stopFalling();
+    } else {
+      this.#fallingRow++;
     }
+  }
+
+  #fallingBlockWouldHitFloor() {
+    return this.#fallingRow >= this.#height - 1;
   }
 
   #stopFalling() {
