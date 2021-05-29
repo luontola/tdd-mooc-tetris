@@ -11,6 +11,9 @@ export class Board {
   }
 
   drop(block) {
+    if (this.#fallingBlock) {
+      throw new Error("another block is already falling");
+    }
     this.#fallingBlock = block;
     this.#fallingRow = 0;
     this.#fallingCol = 1;
