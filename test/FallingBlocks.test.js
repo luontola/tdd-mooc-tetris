@@ -17,7 +17,7 @@ it("normalize", () => {
 });
 
 describe("Falling blocks", () => {
-  it("the board starts empty", () => {
+  it("The board starts empty", () => {
     const board = new Board(3, 3);
     expect(normalize(board.toString())).to.eq(
       normalize(
@@ -26,5 +26,21 @@ describe("Falling blocks", () => {
          ...`
       )
     );
+  });
+
+  describe("When a block is dropped", () => {
+    it("it starts from the top middle", () => {
+      const board = new Board(3, 3);
+
+      board.drop("X");
+
+      expect(normalize(board.toString())).to.eq(
+        normalize(
+          `.X.
+           ...
+           ...`
+        )
+      );
+    });
   });
 });
