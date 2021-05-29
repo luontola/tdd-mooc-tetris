@@ -74,4 +74,26 @@ describe("Falling blocks", () => {
       expect(board.hasFalling()).to.be.false;
     });
   });
+
+  describe("When a block lands on another block", () => {
+    beforeEach(() => {
+      board.drop("X");
+      board.tick();
+      board.tick();
+      board.tick();
+      board.drop("Y");
+      board.tick();
+    });
+
+    it("it is still moving on the row above the other block", () => {
+      expect(board.toString()).to.look(
+        `...
+         .Y.
+         .X.`
+      );
+      expect(board.hasFalling()).to.be.true;
+    });
+
+    it("it stops when it hits the other block");
+  });
 });
