@@ -1,13 +1,20 @@
+const EMPTY = ".";
+
 export class Board {
   #width;
   #height;
   #fallingBlock = null;
   #fallingRow;
   #fallingCol;
+  #immobile;
 
   constructor(width, height) {
     this.#width = width;
     this.#height = height;
+    this.#immobile = new Array(height);
+    for (let row = 0; row < height; row++) {
+      this.#immobile[row] = new Array(width).fill(EMPTY);
+    }
   }
 
   drop(block) {
@@ -43,7 +50,7 @@ export class Board {
         ) {
           s += this.#fallingBlock;
         } else {
-          s += ".";
+          s += this.#immobile[row][col];
         }
       }
       s += "\n";
