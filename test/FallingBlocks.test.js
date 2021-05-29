@@ -1,20 +1,6 @@
 import { expect } from "chai";
 import { Board } from "../src/Board.js";
-
-function normalize(s) {
-  return s
-    .split("\n")
-    .map((line) => line.trim())
-    .join("\n")
-    .trim();
-}
-
-it("normalize", () => {
-  expect(normalize("")).to.eq("");
-  expect(normalize("  x  ")).to.eq("x");
-  expect(normalize("   x\n   x")).to.eq("x\nx");
-  expect(normalize("   x\n   x\n")).to.eq("x\nx");
-});
+import "./testing.js";
 
 describe("Falling blocks", () => {
   let board;
@@ -23,12 +9,10 @@ describe("Falling blocks", () => {
   });
 
   it("The board starts empty", () => {
-    expect(normalize(board.toString())).to.eq(
-      normalize(
-        `...
-         ...
-         ...`
-      )
+    expect(board.toString()).to.look(
+      `...
+       ...
+       ...`
     );
   });
 
@@ -38,24 +22,20 @@ describe("Falling blocks", () => {
     });
 
     it("it starts from the top middle", () => {
-      expect(normalize(board.toString())).to.eq(
-        normalize(
-          `.X.
-           ...
-           ...`
-        )
+      expect(board.toString()).to.look(
+        `.X.
+         ...
+         ...`
       );
     });
 
     it("it moves down one row per tick", () => {
       board.tick();
 
-      expect(normalize(board.toString())).to.eq(
-        normalize(
-          `...
-           .X.
-           ...`
-        )
+      expect(board.toString()).to.look(
+        `...
+         .X.
+         ...`
       );
     });
   });
