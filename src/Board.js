@@ -16,6 +16,10 @@ export class Board {
     this.#fallingCol = 1;
   }
 
+  tick() {
+    this.#fallingRow++;
+  }
+
   toString() {
     let s = "";
     for (let row = 0; row < this.#height; row++) {
@@ -25,7 +29,7 @@ export class Board {
           row === this.#fallingRow &&
           col === this.#fallingCol
         ) {
-          s += "X";
+          s += this.#fallingBlock;
         } else {
           s += ".";
         }

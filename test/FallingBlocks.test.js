@@ -42,5 +42,20 @@ describe("Falling blocks", () => {
         )
       );
     });
+
+    it("it moves down one row per tick", () => {
+      const board = new Board(3, 3);
+
+      board.drop("X");
+      board.tick();
+
+      expect(normalize(board.toString())).to.eq(
+        normalize(
+          `...
+           .X.
+           ...`
+        )
+      );
+    });
   });
 });
