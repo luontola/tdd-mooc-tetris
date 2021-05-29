@@ -60,7 +60,10 @@ describe("Falling blocks", () => {
          ...
          .X.`
       );
-      expect(board.hasFalling()).to.be.true;
+      expect(
+        board.hasFalling(),
+        "the player should still be able to move the block"
+      ).to.be.true;
     });
 
     it("it stops when it hits the bottom", () => {
@@ -71,7 +74,7 @@ describe("Falling blocks", () => {
          ...
          .X.`
       );
-      expect(board.hasFalling()).to.be.false;
+      expect(board.hasFalling(), "the block should stop moving").to.be.false;
     });
   });
 
@@ -91,9 +94,21 @@ describe("Falling blocks", () => {
          .Y.
          .X.`
       );
-      expect(board.hasFalling()).to.be.true;
+      expect(
+        board.hasFalling(),
+        "the player should still be able to move the block"
+      ).to.be.true;
     });
 
-    it("it stops when it hits the other block");
+    it("it stops when it hits the other block", () => {
+      board.tick();
+
+      expect(board.toString()).to.look(
+        `...
+         .Y.
+         .X.`
+      );
+      expect(board.hasFalling(), "the block should stop moving").to.be.false;
+    });
   });
 });

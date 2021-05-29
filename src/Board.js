@@ -27,7 +27,10 @@ export class Board {
   }
 
   tick() {
-    if (this.#fallingBlockWouldHitFloor()) {
+    if (
+      this.#fallingBlockWouldHitFloor() ||
+      this.#fallingBlockWouldHitImmobileBlocks()
+    ) {
       this.#stopFalling();
     } else {
       this.#fallingRow++;
@@ -35,7 +38,14 @@ export class Board {
   }
 
   #fallingBlockWouldHitFloor() {
-    return this.#fallingRow >= this.#height - 1;
+    let nextRow = this.#fallingRow + 1;
+    return nextRow >= this.#height;
+  }
+
+  #fallingBlockWouldHitImmobileBlocks() {
+    let nextRow = this.#fallingRow + 1;
+    let nextCol = this.#fallingCol;
+    return this.#immobile[nextRow][nextCol] !== EMPTY;
   }
 
   #stopFalling() {
