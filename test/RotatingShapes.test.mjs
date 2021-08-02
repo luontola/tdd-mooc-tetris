@@ -38,10 +38,14 @@ class RotatingShape {
     }
     for (let row = 0; row < dimensions; row++) {
       for (let col = 0; col < dimensions; col++) {
-        rotated[col][2 - row] = this.#shape[row][col];
+        rotated[col][dimensions - 1 - row] = this.#shape[row][col];
       }
     }
     return new RotatingShape(rotated);
+  }
+
+  rotateLeft() {
+    return this.rotateRight().rotateRight().rotateRight();
   }
 }
 
@@ -65,6 +69,14 @@ describe("Rotating 3x3 shape", () => {
       `GDA
        HEB
        IFC`
+    );
+  })
+
+  it("can be rotated left/counter-clockwise", () => {
+    expect(shape.rotateLeft().toString()).to.equalShape(
+      `CFI
+       BEH
+       ADG`
     );
   })
 })
