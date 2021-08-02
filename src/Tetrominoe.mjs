@@ -9,10 +9,18 @@ export class Tetrominoe {
   #shape;
 
   constructor(shape) {
-    this.#shape = new RotatingShape(shape);
+    if (typeof shape === "string") {
+      this.#shape = new RotatingShape(shape);
+    } else {
+      this.#shape = shape;
+    }
   }
 
   toString() {
     return this.#shape.toString();
+  }
+
+  rotateRight() {
+    return new Tetrominoe(this.#shape.rotateRight());
   }
 }
