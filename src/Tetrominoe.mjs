@@ -12,25 +12,34 @@ export class Tetrominoe {
      .....
      .....`);
 
-  #shape;
+  #currentOrientation;
+  #orientations;
 
-  constructor(shape) {
-    if (typeof shape === "string") {
-      this.#shape = new RotatingShape(shape);
+  constructor(initialShape, currentOrientation, orientations) {
+    if (initialShape === null) {
+      this.#currentOrientation = (currentOrientation + 4) % 4;
+      this.#orientations = orientations;
     } else {
-      this.#shape = shape;
+      const shape = new RotatingShape(initialShape);
+      this.#currentOrientation = 0;
+      this.#orientations = [
+        shape,
+        shape.rotateRight(),
+        shape.rotateRight().rotateRight(),
+        shape.rotateRight().rotateRight().rotateRight()
+      ]
     }
   }
 
   toString() {
-    return this.#shape.toString();
+    return this.#orientations[this.#currentOrientation].toString();
   }
 
   rotateRight() {
-    return new Tetrominoe(this.#shape.rotateRight());
+    return new Tetrominoe(null, this.#currentOrientation + 1, this.#orientations);
   }
 
   rotateLeft() {
-    return new Tetrominoe(this.#shape.rotateLeft());
+    return new Tetrominoe(null, this.#currentOrientation - 1, this.#orientations);
   }
 }
