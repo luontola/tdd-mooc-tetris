@@ -28,3 +28,17 @@ describe("The T shape", () => {
     );
   })
 })
+
+describe("The I shape", () => {
+  const shape = Tetrominoe.I_SHAPE;
+
+  it("is shaped like I", () => {
+    expect(shape.toString()).to.equalShape(
+      `.....
+       .....
+       IIII.
+       .....
+       .....`
+    );
+  })
+})

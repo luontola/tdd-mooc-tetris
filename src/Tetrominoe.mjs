@@ -5,6 +5,12 @@ export class Tetrominoe {
     `.T.
      TTT
      ...`);
+  static I_SHAPE = new Tetrominoe(
+    `.....
+     .....
+     IIII.
+     .....
+     .....`);
 
   #shape;
 
