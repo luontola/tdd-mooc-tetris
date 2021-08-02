@@ -1,6 +1,5 @@
-import { expect } from "chai";
-import { Board } from "../src/Board.js";
-import "./testing.js";
+import {expect} from "chai";
+import {Board} from "../src/Board.mjs";
 
 describe("Falling blocks", () => {
   let board;
@@ -9,7 +8,7 @@ describe("Falling blocks", () => {
   });
 
   it("The board starts empty", () => {
-    expect(board.toString()).to.look(
+    expect(board.toString()).to.equalShape(
       `...
        ...
        ...`
@@ -22,7 +21,7 @@ describe("Falling blocks", () => {
     });
 
     it("it starts from the top middle", () => {
-      expect(board.toString()).to.look(
+      expect(board.toString()).to.equalShape(
         `.X.
          ...
          ...`
@@ -32,7 +31,7 @@ describe("Falling blocks", () => {
     it("it moves down one row per tick", () => {
       board.tick();
 
-      expect(board.toString()).to.look(
+      expect(board.toString()).to.equalShape(
         `...
          .X.
          ...`
@@ -43,7 +42,7 @@ describe("Falling blocks", () => {
       const before = board.toString();
       expect(() => board.drop("Y")).to.throw("already falling");
       const after = board.toString();
-      expect(after).to.eq(before);
+      expect(after).to.equal(before);
     });
   });
 
@@ -55,7 +54,7 @@ describe("Falling blocks", () => {
     });
 
     it("it is still moving on the last row", () => {
-      expect(board.toString()).to.look(
+      expect(board.toString()).to.equalShape(
         `...
          ...
          .X.`
@@ -69,7 +68,7 @@ describe("Falling blocks", () => {
     it("it stops when it hits the bottom", () => {
       board.tick();
 
-      expect(board.toString()).to.look(
+      expect(board.toString()).to.equalShape(
         `...
          ...
          .X.`
@@ -89,7 +88,7 @@ describe("Falling blocks", () => {
     });
 
     it("it is still moving on the row above the other block", () => {
-      expect(board.toString()).to.look(
+      expect(board.toString()).to.equalShape(
         `...
          .Y.
          .X.`
@@ -103,7 +102,7 @@ describe("Falling blocks", () => {
     it("it stops when it hits the other block", () => {
       board.tick();
 
-      expect(board.toString()).to.look(
+      expect(board.toString()).to.equalShape(
         `...
          .Y.
          .X.`

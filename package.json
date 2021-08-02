@@ -25,12 +25,11 @@
     "node": ">=16.0.0",
     "npm": ">=7.0.0"
   },
-  "type": "module",
   "mocha": {
     "parallel": true
   },
   "scripts": {
-    "test": "mocha 'test/**/*.test.js'",
+    "test": "mocha --require test/testing.mjs 'test/**/*.test.mjs'",
     "autotest": "npm run test -- --watch",
     "format": "prettier --write ."
   }
