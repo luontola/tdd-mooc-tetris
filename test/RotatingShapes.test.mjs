@@ -33,10 +33,12 @@ class RotatingShape {
      */
     const dimensions = this.#shape.length;
     const rotated = new Array(dimensions);
-    for (let row = 0; row < this.#shape.length; row++) {
+    for (let row = 0; row < dimensions; row++) {
       rotated[row] = new Array(dimensions);
-      for (let col = 0; col < this.#shape[row].length; col++) {
-        rotated[row][col] = this.#shape[row][col];
+    }
+    for (let row = 0; row < dimensions; row++) {
+      for (let col = 0; col < dimensions; col++) {
+        rotated[col][2 - row] = this.#shape[row][col];
       }
     }
     return new RotatingShape(rotated);
@@ -60,12 +62,9 @@ describe("Rotating 3x3 shape", () => {
 
   it("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
-      `ABC
-       DEF
-       GHI`
-      // `GDA
-      //  HEB
-      //  IFC`
+      `GDA
+       HEB
+       IFC`
     );
   })
 })
