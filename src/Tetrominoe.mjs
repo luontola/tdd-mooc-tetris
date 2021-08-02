@@ -23,4 +23,8 @@ export class Tetrominoe {
   rotateRight() {
     return new Tetrominoe(this.#shape.rotateRight());
   }
+
+  rotateLeft() {
+    return new Tetrominoe(this.#shape.rotateLeft());
+  }
 }
