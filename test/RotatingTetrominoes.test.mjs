@@ -2,12 +2,14 @@ import {expect} from "chai";
 import {Tetrominoe} from "../src/Tetrominoe.mjs";
 
 function distinctOrientations(shape) {
-  let current = shape;
-  let distinct = new Set();
+  const distinct = new Set();
+  let goingRight = shape;
+  let goingLeft = shape;
   for (let i = 0; i < 10; i++) {
-    distinct.add(current.toString());
-    distinct.add(current.rotateLeft().toString());
-    current = current.rotateRight();
+    distinct.add(goingRight.toString());
+    goingRight = goingRight.rotateRight();
+    distinct.add(goingLeft.toString());
+    goingLeft = goingLeft.rotateLeft()
   }
   return distinct;
 }
