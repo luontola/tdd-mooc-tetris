@@ -19,4 +19,12 @@ describe("The T shape", () => {
        .T.`
     );
   })
+
+  it("can be rotated left/counter-clockwise", () => {
+    expect(shape.rotateLeft().toString()).to.equalShape(
+      `.T.
+       TT.
+       .T.`
+    );
+  })
 })
