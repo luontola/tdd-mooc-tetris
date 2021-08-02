@@ -1,6 +1,17 @@
 import {expect} from "chai";
 import {Tetrominoe} from "../src/Tetrominoe.mjs";
 
+function distinctOrientations(shape) {
+  let current = shape;
+  let distinct = new Set();
+  for (let i = 0; i < 10; i++) {
+    distinct.add(current.toString());
+    distinct.add(current.rotateLeft().toString());
+    current = current.rotateRight();
+  }
+  return distinct;
+}
+
 describe("The T shape", () => {
   const shape = Tetrominoe.T_SHAPE;
 
@@ -27,6 +38,10 @@ describe("The T shape", () => {
        .T.`
     );
   })
+
+  it("has 4 distinct orientations", () => {
+    expect(distinctOrientations(shape).size).to.equal(4);
+  });
 })
 
 describe("The I shape", () => {
@@ -61,4 +76,8 @@ describe("The I shape", () => {
        .....`
     );
   })
+
+  it("has 2 distinct orientations", () => {
+    expect(distinctOrientations(shape).size).to.equal(2);
+  });
 })
