@@ -4,30 +4,30 @@ export class Tetrominoe {
   static T_SHAPE = new Tetrominoe(
     `.T.
      TTT
-     ...`);
+     ...`, 0, 4);
   static I_SHAPE = new Tetrominoe(
     `.....
      .....
      IIII.
      .....
-     .....`);
+     .....`, 0, 2);
 
   #currentOrientation;
   #orientations;
 
   constructor(initialShape, currentOrientation, orientations) {
     if (initialShape === null) {
-      this.#currentOrientation = (currentOrientation + 4) % 4;
+      this.#currentOrientation = (currentOrientation + orientations.length) % orientations.length;
       this.#orientations = orientations;
     } else {
       const shape = new RotatingShape(initialShape);
-      this.#currentOrientation = 0;
+      this.#currentOrientation = currentOrientation;
       this.#orientations = [
         shape,
         shape.rotateRight(),
         shape.rotateRight().rotateRight(),
         shape.rotateRight().rotateRight().rotateRight()
-      ]
+      ].slice(0, orientations)
     }
   }
 
