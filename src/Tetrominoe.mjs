@@ -1,33 +1,33 @@
 import {RotatingShape} from "./RotatingShape.mjs";
 
 export class Tetrominoe {
-  static T_SHAPE = new Tetrominoe(
+  static T_SHAPE = new Tetrominoe(0, 4,
     `.T.
      TTT
-     ...`, 0, 4);
-  static I_SHAPE = new Tetrominoe(
+     ...`);
+  static I_SHAPE = new Tetrominoe(0, 2,
     `.....
      .....
      IIII.
      .....
-     .....`, 0, 2);
+     .....`);
 
   #currentOrientation;
   #orientations;
 
-  constructor(initialShape, currentOrientation, orientations) {
-    if (initialShape === null) {
-      this.#currentOrientation = (currentOrientation + orientations.length) % orientations.length;
-      this.#orientations = orientations;
-    } else {
-      const shape = new RotatingShape(initialShape);
+  constructor(currentOrientation, orientations, initialShape) {
+    if (typeof initialShape === "string") {
       this.#currentOrientation = currentOrientation;
+      const shape = new RotatingShape(initialShape);
       this.#orientations = [
         shape,
         shape.rotateRight(),
         shape.rotateRight().rotateRight(),
         shape.rotateRight().rotateRight().rotateRight()
       ].slice(0, orientations)
+    } else {
+      this.#currentOrientation = (currentOrientation + orientations.length) % orientations.length;
+      this.#orientations = orientations;
     }
   }
 
@@ -36,10 +36,10 @@ export class Tetrominoe {
   }
 
   rotateRight() {
-    return new Tetrominoe(null, this.#currentOrientation + 1, this.#orientations);
+    return new Tetrominoe(this.#currentOrientation + 1, this.#orientations);
   }
 
   rotateLeft() {
-    return new Tetrominoe(null, this.#currentOrientation - 1, this.#orientations);
+    return new Tetrominoe(this.#currentOrientation - 1, this.#orientations);
   }
 }
