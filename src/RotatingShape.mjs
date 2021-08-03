@@ -21,6 +21,10 @@ export class RotatingShape {
     }
   }
 
+  size() {
+    return this.#shape.length;
+  }
+
   toString() {
     return this.#shape.map((row) => row.join("")).join("\n") + "\n";
   }

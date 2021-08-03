@@ -23,7 +23,7 @@ export class Board {
     }
     this.#fallingBlock = block;
     this.#fallingRow = 0;
-    this.#fallingCol = 1;
+    this.#fallingCol = Math.floor((this.#width - block.size()) / 2);
   }
 
   tick() {
