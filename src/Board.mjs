@@ -3,7 +3,7 @@ const EMPTY = ".";
 export class Board {
   #width;
   #height;
-  #fallingBlock = null;
+  #falling = null;
   #fallingRow;
   #fallingCol;
   #immobile;
@@ -17,45 +17,44 @@ export class Board {
     }
   }
 
-  drop(block) {
-    if (this.#fallingBlock) {
-      throw new Error("another block is already falling");
+  drop(piece) {
+    if (this.#falling) {
+      throw new Error("another piece is already falling");
     }
-    this.#fallingBlock = block;
+    this.#falling = piece;
     this.#fallingRow = 0;
-    this.#fallingCol = Math.floor((this.#width - block.size()) / 2);
+    this.#fallingCol = Math.floor((this.#width - piece.width()) / 2);
   }
 
   tick() {
-    if (
-      this.#fallingBlockWouldHitFloor() ||
-      this.#fallingBlockWouldHitImmobileBlocks()
-    ) {
+    if (this.#fallingWouldHitFloor() || this.#fallingWouldHitImmobile()) {
       this.#stopFalling();
     } else {
       this.#fallingRow++;
     }
   }
 
-  #fallingBlockWouldHitFloor() {
+  #fallingWouldHitFloor() {
     let nextRow = this.#fallingRow + 1;
     return nextRow >= this.#height;
   }
 
-  #fallingBlockWouldHitImmobileBlocks() {
+  #fallingWouldHitImmobile() {
     let nextRow = this.#fallingRow + 1;
     let nextCol = this.#fallingCol;
     return this.#immobile[nextRow][nextCol] !== EMPTY;
   }
 
   #stopFalling() {
-    this.#immobile[this.#fallingRow][this.#fallingCol] =
-      this.#fallingBlock.cellAt(0, 0);
-    this.#fallingBlock = null;
+    this.#immobile[this.#fallingRow][this.#fallingCol] = this.#falling.blockAt(
+      0,
+      0
+    );
+    this.#falling = null;
   }
 
   hasFalling() {
-    return this.#fallingBlock !== null;
+    return this.#falling !== null;
   }
 
   toString() {
@@ -63,11 +62,11 @@ export class Board {
     for (let row = 0; row < this.#height; row++) {
       for (let col = 0; col < this.#width; col++) {
         if (
-          this.#fallingBlock &&
+          this.#falling &&
           row === this.#fallingRow &&
           col === this.#fallingCol
         ) {
-          s += this.#fallingBlock.cellAt(0, 0);
+          s += this.#falling.blockAt(0, 0);
         } else {
           s += this.#immobile[row][col];
         }

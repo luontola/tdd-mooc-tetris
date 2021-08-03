@@ -1,3 +1,5 @@
+import { shapeToString } from "./shapes.mjs";
+
 export class Block {
   #color;
 
@@ -5,11 +7,21 @@ export class Block {
     this.#color = color;
   }
 
-  cellAt(row, col) {
-    return this.#color;
+  width() {
+    return 1;
   }
 
-  size() {
+  height() {
     return 1;
+  }
+
+  blockAt(row, col) {
+    if (row === 0 && col === 0) {
+      return this.#color;
+    }
+  }
+
+  toString() {
+    return shapeToString(this);
   }
 }
