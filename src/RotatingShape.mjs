@@ -15,16 +15,14 @@ export class RotatingShape {
         .replaceAll(" ", "")
         .trim()
         .split("\n")
-        .map(row => row.split(""));
+        .map((row) => row.split(""));
     } else {
       this.#shape = shape;
     }
   }
 
   toString() {
-    return this.#shape
-      .map(row => row.join(""))
-      .join("\n") + "\n";
+    return this.#shape.map((row) => row.join("")).join("\n") + "\n";
   }
 
   rotateRight() {

@@ -1,4 +1,4 @@
-import {Assertion} from "chai";
+import { Assertion } from "chai";
 
 export function normalize(s) {
   return s.replaceAll(" ", "").trim() + "\n";

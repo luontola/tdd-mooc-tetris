@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {RotatingShape} from "../src/RotatingShape.mjs";
+import { expect } from "chai";
+import { RotatingShape } from "../src/RotatingShape.mjs";
 
 describe("Rotating 3x3 shape", () => {
   const shape = new RotatingShape(
@@ -14,7 +14,7 @@ describe("Rotating 3x3 shape", () => {
        DEF
        GHI`
     );
-  })
+  });
 
   it("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
@@ -22,7 +22,7 @@ describe("Rotating 3x3 shape", () => {
        HEB
        IFC`
     );
-  })
+  });
 
   it("can be rotated left/counter-clockwise", () => {
     expect(shape.rotateLeft().toString()).to.equalShape(
@@ -30,8 +30,8 @@ describe("Rotating 3x3 shape", () => {
        BEH
        ADG`
     );
-  })
-})
+  });
+});
 
 describe("Rotating 5x5 shape", () => {
   const shape = new RotatingShape(
@@ -50,7 +50,7 @@ describe("Rotating 5x5 shape", () => {
        PQRST
        UVWXY`
     );
-  })
+  });
 
   it("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
@@ -60,7 +60,7 @@ describe("Rotating 5x5 shape", () => {
        XSNID
        YTOJE`
     );
-  })
+  });
 
   it("can be rotated left/counter-clockwise", () => {
     expect(shape.rotateLeft().toString()).to.equalShape(
@@ -70,5 +70,5 @@ describe("Rotating 5x5 shape", () => {
        BGLQV
        AFKPU`
     );
-  })
-})
+  });
+});
