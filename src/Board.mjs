@@ -68,8 +68,17 @@ export class Board {
   }
 
   blockAt(row, col) {
-    if (this.#falling && row === this.#fallingRow && col === this.#fallingCol) {
-      return this.#falling.blockAt(0, 0);
+    if (
+      this.#falling &&
+      row >= this.#fallingRow &&
+      row < this.#fallingRow + this.#falling.height() &&
+      col >= this.#fallingCol &&
+      col < this.#fallingCol + this.#falling.width()
+    ) {
+      return this.#falling.blockAt(
+        row - this.#fallingRow,
+        col - this.#fallingCol
+      );
     } else {
       return this.#immobile[row][col];
     }
