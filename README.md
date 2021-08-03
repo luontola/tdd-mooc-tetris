@@ -10,6 +10,10 @@ This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/Jav
 assertions, but the concepts are language agnostic. It would be quite easy to translate the example tests to another
 programming language as you go.
 
+Refer to the course material at <https://tdd-mooc.luontola.fi> to learn more about TDD.
+
+## 🚀 [Start the exercise](docs/level-1.md)
+
 ## Prerequisites
 
 You'll need a recent [Node.js](https://nodejs.org/) version. Then download this project's dependencies with:
@@ -29,5 +33,3 @@ Run tests continuously
 Code reformat
 
     npm run format
-
-## 🚀 [Start the exercise](docs/level-1.md)
