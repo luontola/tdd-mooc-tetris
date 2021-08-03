@@ -1,4 +1,4 @@
-import { RotatingShape } from "./RotatingShape.mjs";
+import {RotatingShape} from "./RotatingShape.mjs";
 
 export class Tetromino {
   static T_SHAPE = new Tetromino(
@@ -43,6 +43,14 @@ export class Tetromino {
         (currentOrientation + orientations.length) % orientations.length;
       this.#orientations = orientations;
     }
+  }
+
+  cellAt(row, col) {
+    return "Z"; // TODO
+  }
+
+  size() {
+    return this.#orientations[0].size();
   }
 
   toString() {
