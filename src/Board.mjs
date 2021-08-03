@@ -2,6 +2,16 @@ import { shapeToString } from "./shapes.mjs";
 
 const EMPTY = ".";
 
+class Point {
+  row;
+  col;
+
+  constructor(row, col) {
+    this.row = row;
+    this.col = col;
+  }
+}
+
 class MovableShape {
   #shape;
   #row;
@@ -15,6 +25,19 @@ class MovableShape {
 
   moveDown() {
     return new MovableShape(this.#shape, this.#row + 1, this.#col);
+  }
+
+  nonEmptyBlocks() {
+    const points = [];
+    for (let row = this.#row; row < this.#row + this.#shape.height(); row++) {
+      for (let col = this.#col; col < this.#col + this.#shape.width(); col++) {
+        const block = this.blockAt(row, col);
+        if (block !== EMPTY) {
+          points.push(new Point(row, col));
+        }
+      }
+    }
+    return points;
   }
 
   width() {
@@ -73,22 +96,27 @@ export class Board {
     if (!this.hasFalling()) {
       return;
     }
-    if (this.#fallingWouldHitFloor() || this.#fallingWouldHitImmobile()) {
+    const test = this.#falling.moveDown();
+    if (this.#pieceHitsFloor(test) || this.#fallingWouldHitImmobile()) {
       this.#stopFalling();
     } else {
-      this.#falling = this.#falling.moveDown();
+      this.#falling = test;
       this.#fallingRow++;
     }
   }
 
-  #fallingWouldHitFloor() {
-    let nextRow = this.#fallingRow + this.#falling.height();
-    return nextRow >= this.#height;
+  #pieceHitsFloor(piece) {
+    for (const block of piece.nonEmptyBlocks()) {
+      if (block.row >= this.#height) {
+        return true;
+      }
+    }
+    return false;
   }
 
   #fallingWouldHitImmobile() {
-    let nextRow = this.#fallingRow + 1;
-    let nextCol = this.#fallingCol;
+    const nextRow = this.#fallingRow + 1;
+    const nextCol = this.#fallingCol;
     return this.#immobile[nextRow][nextCol] !== EMPTY;
   }
 
