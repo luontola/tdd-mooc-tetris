@@ -27,7 +27,7 @@ describe("Falling tetrominoes", () => {
     );
   });
 
-  xit("The falling tetromino stops when it hits the bottom", () => {
+  it("The falling tetromino stops when it hits the bottom", () => {
     board.drop(Tetromino.T_SHAPE);
     fallToBottom(board);
 
