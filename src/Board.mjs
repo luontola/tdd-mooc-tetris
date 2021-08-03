@@ -1,3 +1,5 @@
+import { shapeToString } from "./shapes.mjs";
+
 const EMPTY = ".";
 
 export class Board {
@@ -57,22 +59,23 @@ export class Board {
     return this.#falling !== null;
   }
 
-  toString() {
-    let s = "";
-    for (let row = 0; row < this.#height; row++) {
-      for (let col = 0; col < this.#width; col++) {
-        if (
-          this.#falling &&
-          row === this.#fallingRow &&
-          col === this.#fallingCol
-        ) {
-          s += this.#falling.blockAt(0, 0);
-        } else {
-          s += this.#immobile[row][col];
-        }
-      }
-      s += "\n";
+  width() {
+    return this.#width;
+  }
+
+  height() {
+    return this.#height;
+  }
+
+  blockAt(row, col) {
+    if (this.#falling && row === this.#fallingRow && col === this.#fallingCol) {
+      return this.#falling.blockAt(0, 0);
+    } else {
+      return this.#immobile[row][col];
     }
-    return s;
+  }
+
+  toString() {
+    return shapeToString(this);
   }
 }
