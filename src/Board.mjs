@@ -29,6 +29,9 @@ export class Board {
   }
 
   tick() {
+    if (!this.hasFalling()) {
+      return;
+    }
     if (this.#fallingWouldHitFloor() || this.#fallingWouldHitImmobile()) {
       this.#stopFalling();
     } else {
@@ -48,10 +51,11 @@ export class Board {
   }
 
   #stopFalling() {
-    this.#immobile[this.#fallingRow][this.#fallingCol] = this.#falling.blockAt(
-      0,
-      0
-    );
+    for (let row = 0; row < this.height(); row++) {
+      for (let col = 0; col < this.width(); col++) {
+        this.#immobile[row][col] = this.blockAt(row, col);
+      }
+    }
     this.#falling = null;
   }
 
