@@ -1,5 +1,7 @@
 # Level 2: Rotating shapes
 
+TODO
+
 Open the file [test/RotatingShapes.test.mjs](../test/RotatingShapes.test.mjs).
 
-## 🚀 [Proceed to next level](level-3.md)
+## 🚀 [Continue to the next level](level-3.md)

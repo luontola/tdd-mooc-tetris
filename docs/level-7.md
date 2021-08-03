@@ -2,4 +2,4 @@
 
 TODO
 
-## 🚀 [Proceed to next level](level-8.md)
+## 🚀 [Continue to the next level](level-8.md)

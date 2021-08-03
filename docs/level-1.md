@@ -1,8 +1,11 @@
 # Level 1: Falling blocks
 
-Where to start writing a Tetris game? What is the most important behavior, which is not yet implemented? You can't have
-a Tetris without falling tetrominoes, so that would be one place to start. But already that is quite a complex feature.
-With TDD we prefer to *start small*. So let's start by implementing falling 1×1 blocks.
+> Where to start writing a Tetris game? What is the most important behavior, which is not yet implemented?
+>
+> You can't have a Tetris without falling tetrominoes, so that would be one place to start. But already that is quite a
+> complex feature.
+>
+> With TDD we prefer to _start small_. So let's start by implementing falling 1×1 blocks.
 
 Open the file [test/FallingBlocks.test.mjs](../test/FallingBlocks.test.mjs).
 
@@ -14,4 +17,4 @@ Implement enough of [src/Board.mjs](../src/Board.mjs) to make the one failing te
 Then uncomment the next test: remove the `/*` `*/` comment marks or enabled a disabled tests by changing `xit` to `it`.
 Uncomment and make the tests pass, one test at a time, until all the tests as passing.
 
-## 🚀 [Proceed to next level](level-2.md)
+## 🚀 [Continue to the next level](level-2.md)
