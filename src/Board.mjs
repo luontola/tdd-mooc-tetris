@@ -49,7 +49,8 @@ export class Board {
   }
 
   #stopFalling() {
-    this.#immobile[this.#fallingRow][this.#fallingCol] = this.#fallingBlock;
+    this.#immobile[this.#fallingRow][this.#fallingCol] =
+      this.#fallingBlock.cellAt(0, 0);
     this.#fallingBlock = null;
   }
 
@@ -66,7 +67,7 @@ export class Board {
           row === this.#fallingRow &&
           col === this.#fallingCol
         ) {
-          s += this.#fallingBlock;
+          s += this.#fallingBlock.cellAt(0, 0);
         } else {
           s += this.#immobile[row][col];
         }
