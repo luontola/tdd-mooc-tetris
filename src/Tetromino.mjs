@@ -1,17 +1,17 @@
 import {RotatingShape} from "./RotatingShape.mjs";
 
-export class Tetrominoe {
-  static T_SHAPE = new Tetrominoe(0, 4,
+export class Tetromino {
+  static T_SHAPE = new Tetromino(0, 4,
     `.T.
      TTT
      ...`);
-  static I_SHAPE = new Tetrominoe(0, 2,
+  static I_SHAPE = new Tetromino(0, 2,
     `.....
      .....
      IIII.
      .....
      .....`);
-  static O_SHAPE = new Tetrominoe(0, 1,
+  static O_SHAPE = new Tetromino(0, 1,
     `.OO
      .OO
      ...`);
@@ -40,10 +40,10 @@ export class Tetrominoe {
   }
 
   rotateRight() {
-    return new Tetrominoe(this.#currentOrientation + 1, this.#orientations);
+    return new Tetromino(this.#currentOrientation + 1, this.#orientations);
   }
 
   rotateLeft() {
-    return new Tetrominoe(this.#currentOrientation - 1, this.#orientations);
+    return new Tetromino(this.#currentOrientation - 1, this.#orientations);
   }
 }
