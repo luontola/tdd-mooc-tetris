@@ -1,5 +1,5 @@
-import {expect} from "chai";
-import {normalize} from "./testing.mjs";
+import { expect } from "chai";
+import { normalize } from "./testing.mjs";
 
 it("normalize", () => {
   expect(normalize("")).to.equal("\n");

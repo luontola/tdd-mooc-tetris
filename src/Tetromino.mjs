@@ -1,20 +1,29 @@
-import {RotatingShape} from "./RotatingShape.mjs";
+import { RotatingShape } from "./RotatingShape.mjs";
 
 export class Tetromino {
-  static T_SHAPE = new Tetromino(0, 4,
+  static T_SHAPE = new Tetromino(
+    0,
+    4,
     `.T.
      TTT
-     ...`);
-  static I_SHAPE = new Tetromino(0, 2,
+     ...`
+  );
+  static I_SHAPE = new Tetromino(
+    0,
+    2,
     `.....
      .....
      IIII.
      .....
-     .....`);
-  static O_SHAPE = new Tetromino(0, 1,
+     .....`
+  );
+  static O_SHAPE = new Tetromino(
+    0,
+    1,
     `.OO
      .OO
-     ...`);
+     ...`
+  );
 
   #currentOrientation;
   #orientations;
@@ -27,10 +36,11 @@ export class Tetromino {
         shape,
         shape.rotateRight(),
         shape.rotateRight().rotateRight(),
-        shape.rotateRight().rotateRight().rotateRight()
-      ].slice(0, orientations)
+        shape.rotateRight().rotateRight().rotateRight(),
+      ].slice(0, orientations);
     } else {
-      this.#currentOrientation = (currentOrientation + orientations.length) % orientations.length;
+      this.#currentOrientation =
+        (currentOrientation + orientations.length) % orientations.length;
       this.#orientations = orientations;
     }
   }
