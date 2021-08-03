@@ -40,14 +40,6 @@ class MovableShape {
     return points;
   }
 
-  width() {
-    return this.#shape.width();
-  }
-
-  height() {
-    return this.#shape.height();
-  }
-
   blockAt(row, col) {
     if (
       row >= this.#row &&
@@ -66,8 +58,6 @@ export class Board {
   #width;
   #height;
   #falling = null;
-  #fallingRow;
-  #fallingCol;
   #immobile;
 
   constructor(width, height) {
@@ -88,25 +78,22 @@ export class Board {
       0,
       Math.floor((this.#width - piece.width()) / 2)
     );
-    this.#fallingRow = 0;
-    this.#fallingCol = Math.floor((this.#width - piece.width()) / 2);
   }
 
   tick() {
     if (!this.hasFalling()) {
       return;
     }
-    const test = this.#falling.moveDown();
-    if (this.#pieceHitsFloor(test) || this.#fallingWouldHitImmobile()) {
+    const attempt = this.#falling.moveDown();
+    if (this.#hitsFloor(attempt) || this.#hitsImmobile(attempt)) {
       this.#stopFalling();
     } else {
-      this.#falling = test;
-      this.#fallingRow++;
+      this.#falling = attempt;
     }
   }
 
-  #pieceHitsFloor(piece) {
-    for (const block of piece.nonEmptyBlocks()) {
+  #hitsFloor(falling) {
+    for (const block of falling.nonEmptyBlocks()) {
       if (block.row >= this.#height) {
         return true;
       }
@@ -114,10 +101,13 @@ export class Board {
     return false;
   }
 
-  #fallingWouldHitImmobile() {
-    const nextRow = this.#fallingRow + 1;
-    const nextCol = this.#fallingCol;
-    return this.#immobile[nextRow][nextCol] !== EMPTY;
+  #hitsImmobile(falling) {
+    for (const block of falling.nonEmptyBlocks()) {
+      if (this.#immobile[block.row][block.col] !== EMPTY) {
+        return true;
+      }
+    }
+    return false;
   }
 
   #stopFalling() {
