@@ -19,6 +19,6 @@ Implement a shuffle bag for randomizing the tetrominoes.
 
 When the tests cannot assume the exact order of the randomized values, you will need to
 do [property-based testing](https://increment.com/testing/in-praise-of-property-based-testing/)
-and assert generic invariants instead of specific examples.
+and assert generic invariants instead of specific examples. (You won't need a property-based testing library here.)
 
 ## 🥳 That's all, folks
