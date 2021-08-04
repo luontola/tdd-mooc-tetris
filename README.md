@@ -1,4 +1,4 @@
-# TDD MOOC: Tetris Exercise
+# TDD MOOC: Tetris
 
 In this exercise you will be implementing a Tetris game using Test-Driven Development (TDD). The first couple dozen
 tests have already been written for you - just uncomment them one by one. This should help to get over the initial
