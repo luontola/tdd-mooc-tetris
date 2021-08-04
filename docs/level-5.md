@@ -5,8 +5,8 @@
 > A game isn't much fun if you can't control it. As the next step, let's make it possible for the player to move the
 > falling tetrominoes left, right and down.
 
-Now it's time for you to write your own tests. Here are some example test names, which should be enough to cover all the
-corner cases:
+It's time to write your own tests. Here are some example test names, which should be enough to cover all the corner
+cases:
 
 - a falling piece can be moved left
 - a falling piece can be moved right

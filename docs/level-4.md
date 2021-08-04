@@ -1,6 +1,6 @@
 # Level 4: Falling tetrominoes
 
-> Previously we have implemented falling blocks and rotating tetrominoes. Next let's put them together.
+> Previously we have implemented falling blocks and rotating tetrominoes. Let's put them now together.
 
 Open the [test/FallingTetrominoes.test.mjs](../test/FallingTetrominoes.test.mjs) file and implement its tests one by
 one.
