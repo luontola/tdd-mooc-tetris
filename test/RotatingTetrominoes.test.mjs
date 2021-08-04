@@ -17,7 +17,7 @@ function distinctOrientations(shape) {
 describe("The T shape", () => {
   const shape = Tetromino.T_SHAPE;
 
-  it("is shaped like T", () => {
+  it("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `.T.
        TTT
@@ -49,7 +49,7 @@ describe("The T shape", () => {
 describe("The I shape", () => {
   const shape = Tetromino.I_SHAPE;
 
-  it("is shaped like I", () => {
+  it("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `.....
        .....
@@ -87,7 +87,7 @@ describe("The I shape", () => {
 describe("The O shape", () => {
   const shape = Tetromino.O_SHAPE;
 
-  it("is shaped like O", () => {
+  it("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `.OO
        .OO
