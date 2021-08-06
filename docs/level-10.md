@@ -22,3 +22,6 @@ do [property-based testing](https://increment.com/testing/in-praise-of-property-
 and assert generic invariants instead of specific examples. (You won't need a property-based testing library here.)
 
 ## 🥳 That's all, folks
+
+Obviously the game is not yet complete, because the UI is missing. However, since testing the UI is much harder than
+backend code, it's left outside this exercise. Go making more simple programs with TDD before tackling the hard parts. 
