@@ -1,4 +1,6 @@
 *.js   eol=lf
 *.json eol=lf
 *.md   eol=lf
+*.mjs  eol=lf
+*.ts   eol=lf
 *.txt  eol=lf
