@@ -8,9 +8,10 @@ Implement a [scoring system](https://tetris.fandom.com/wiki/Scoring).
 Since there are many different scoring systems, and it also depends on the game level, it's best to keep the details of
 scoring outside the `Board` class.
 
-Use the [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern), so that the `Board` can send out
-notifications about removed rows. It can be tested using [test doubles](https://martinfowler.com/bliki/TestDouble.html),
-for example a spy.
+Use the [observer pattern](https://refactoring.guru/design-patterns/observer), so that the `Board` sends out
+notifications about removed rows.
+Using [test doubles](https://jesusvalerareales.medium.com/testing-with-test-doubles-7c3abb9eb3f2), the board can be
+tested in isolation, without a scoring system.
 
 Then implement the scoring rules as an object which listens for the notifications from `Board`.
 
