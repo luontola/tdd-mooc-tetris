@@ -15,7 +15,8 @@ algorithm:
 4. Pull the values out one by one until you reach the end
 5. Once you reach the end, shuffle and start over
 
-Implement a shuffle bag for randomizing the tetrominoes.
+Implement a shuffle bag for randomizing the tetrominoes. Later it can be used to feed tetrominoes to the board in random
+order.
 
 When the tests cannot assume the exact order of the randomized values, you will need to
 do [property-based testing](https://increment.com/testing/in-praise-of-property-based-testing/)
@@ -23,5 +24,6 @@ and assert generic invariants instead of specific examples. (You won't need a pr
 
 ## 🥳 That's all, folks
 
-Obviously the game is not yet complete, because the UI is missing. However, since testing the UI is much harder than
-backend code, it's left outside this exercise. Go making more simple programs with TDD before tackling the hard parts.
+Obviously the game is not yet complete, because the game loop and UI are missing. However, since testing the UI is much
+harder than backend code, it's left outside this exercise. Go making more simple programs with TDD before tackling the
+hard parts.
