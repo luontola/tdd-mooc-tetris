@@ -21,6 +21,7 @@ order.
 When the tests cannot assume the exact order of the randomized values, you will need to
 do [property-based testing](https://increment.com/testing/in-praise-of-property-based-testing/)
 and assert generic invariants instead of specific examples. (You won't need a property-based testing library here.)
+See the course material's discussion on [testing randomness](https://tdd-mooc.luontola.fi/3-challenges#randomness).
 
 ## 🥳 That's all, folks
 
