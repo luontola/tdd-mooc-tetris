@@ -1,4 +1,4 @@
-# [TDD MOOC](https://tdd-mooc.luontola.fi/): Tetris
+# [TDD MOOC](https://tdd.mooc.fi): Tetris
 
 In this exercise you will be implementing a Tetris game using Test-Driven Development (TDD). The first couple dozen
 tests have already been written for you - just uncomment them one by one. This should help to get over the initial
@@ -11,11 +11,11 @@ assertions, but the concepts are language agnostic. It would be quite easy to tr
 programming language as you go. There also exists an
 older [Java-based predecessor](https://github.com/luontola/tdd-tetris-tutorial) of this exercise.
 
-Refer to [the course material](https://tdd-mooc.luontola.fi/) to learn more about TDD.
+Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
 
 ---
 
-_This exercise is part of the [TDD MOOC](https://tdd-mooc.luontola.fi/) at the University of Helsinki, brought to you
+_This exercise is part of the [TDD MOOC](https://tdd.mooc.fi) at the University of Helsinki, brought to you
 by [Esko Luontola](https://twitter.com/EskoLuontola) and [Nitor](https://nitor.com/)._
 
 ## 🚀 [Start the exercise](docs/level-1.md)
