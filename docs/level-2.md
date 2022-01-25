@@ -2,7 +2,7 @@
 
 > What is the most important behavior, which is not yet implemented?
 >
-> You can't have a Tetris without rotating tetrominoes. As a [stepping stone](https://www.infoq.com/presentations/responsive-design/)
+> You can't have a Tetris without rotating tetrominoes. As a [stepping stone](https://tdd.mooc.fi/2-design#four-strategies)
 > for that, let's create an algorithm which rotates arbitrary 3×3 and 5×5 block shapes. That should cover the needs of
 > all sizes of tetrominoes.
 
