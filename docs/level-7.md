@@ -14,6 +14,18 @@ removing quite much production and test code - [code is a liability](https://wik
 
 Some unrelated tests might break as a result of this change. That means that the tests were coupled to the choice of a
 rotation system. Think about how the tests could be designed differently, so that they would not be affected by this
-change.
+change. Or at least do the migration in [small steps](https://tdd.mooc.fi/2-design#small-safe-steps), so that no more
+than one test is broken at a time.
+
+Some possible refactoring strategies:
+
+* Use test doubles instead of the official tetrominoes. For example the
+  original [FallingBlocks.test.mjs](../test/FallingBlocks.test.mjs) does this and thus avoids being coupled to the
+  rotation system.
+* Use the [parallel change](https://tdd.mooc.fi/2-design#four-strategies) refactoring strategy and keep both the old and
+  new classes side by side. Migrate the tests to use the new classes one test at a time.
+* If there are tests which do a complex sequence of moving and rotating tetrominoes just to set up the board state in
+  the beginning of a test, instead create operations which let you easily set the board's state. Who knows, maybe
+  they'll be useful also in production code (e.g. to implement save states).
 
 ## 🚀 [Continue to the next level](level-8.md)
