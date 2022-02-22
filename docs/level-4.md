@@ -16,7 +16,7 @@ When refactoring, it's important to work in small steps and run the tests after 
 few minutes since the tests last passed, you're about to enter [refactoring hell](https://wiki.c2.com/?RefactoringHell),
 and it's faster to revert to the last known working state (`git reset --hard`) and try again with even smaller steps.
 
-P.S. It may be helpful to do the [small steps exercise](https://tdd.mooc.fi/exercises#exercise-2-small-safe-steps)
+P.S. It may be helpful to do the [small steps exercise](https://github.com/luontola/tdd-mooc-small-steps)
 before this one.
 
 ## 🚀 [Continue to the next level](level-5.md)
