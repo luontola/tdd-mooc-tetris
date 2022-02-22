@@ -19,7 +19,7 @@ than one test is broken at a time.
 
 Some possible refactoring strategies:
 
-* Use test doubles instead of the official tetrominoes. For example the
+* Use [test doubles](https://tdd.mooc.fi/3-challenges#test-doubles) instead of the official tetrominoes. For example the
   original [FallingBlocks.test.mjs](../test/FallingBlocks.test.mjs) does this and thus avoids being coupled to the
   rotation system.
 * Use the [parallel change](https://tdd.mooc.fi/2-design#four-strategies) refactoring strategy and keep both the old and

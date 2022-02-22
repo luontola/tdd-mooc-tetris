@@ -11,7 +11,7 @@ scoring outside the `Board` class.
 
 Use the [observer pattern](https://refactoring.guru/design-patterns/observer), so that the `Board` sends out
 notifications about removed rows.
-Using [test doubles](https://jesusvalerareales.medium.com/testing-with-test-doubles-7c3abb9eb3f2), the board can be
+Using [test doubles](https://tdd.mooc.fi/3-challenges#test-doubles) the board can be
 tested in isolation, without a scoring system.
 
 Then implement the scoring rules as an object which listens for the notifications from `Board`.
