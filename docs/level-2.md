@@ -10,4 +10,8 @@ Open the [test/RotatingShapes.test.mjs](../test/RotatingShapes.test.mjs) file an
 
 The `RotatingShape` class is meant to be [immutable](https://en.wikipedia.org/wiki/Immutable_object).
 
+Little algorithms like this rotation can be derived using just TDD. First write the simplest thing that could possibly
+work: copy each block individually to its rotated position (~9 lines of code). Then remove duplication to produce a
+generic algorithm (~1 line of code).
+
 ## 🚀 [Continue to the next level](level-3.md)
