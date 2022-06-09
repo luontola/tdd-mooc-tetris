@@ -2,11 +2,8 @@ export class RotatingShape{
     shape;
 
     constructor(shape){
-
-        let string = shape.replaceAll(" ", "").trim()
-        let row = string.split("\n");
+        let row = shape.replaceAll(" ", "").trim().split("\n");
         let cells;
-     
         this.shape = new Array(row.length);
 
         for(let y=0;y< row.length;y++){
@@ -16,8 +13,6 @@ export class RotatingShape{
                 this.shape[y][x] = cells[x];
             }
         }
-
-
     }
 
 
@@ -37,7 +32,6 @@ export class RotatingShape{
 
     rotateLeft(){
 
-        console.log('HEY'+this.shape.length);
         let rotated = Array.from(Array(this.shape.length), () => new Array(this.shape.length));
         for(let y =this.shape.length-1;y>=0;y--){
             console.log('wat');
@@ -47,8 +41,6 @@ export class RotatingShape{
                 
             }
         }
-        console.log(rotated);
-
         return (rotated.join("\n").trim().toString()).split(",").join("").trim().toString() + '\n';
     }
 
