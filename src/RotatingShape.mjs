@@ -4,14 +4,11 @@ export class RotatingShape{
     constructor(shape){
         let row = shape.replaceAll(" ", "").trim().split("\n");
         let cells;
-        this.shape = new Array(row.length);
+        this.shape = Array.from(Array(row.length), () => new Array(row.length));
 
         for(let y=0;y< row.length;y++){
             cells = Array.from(row[y]);
-            this.shape[y] = new Array(cells.length);
-            for(let x=0;x< cells.length;x++){
-                this.shape[y][x] = cells[x];
-            }
+            for(let x=0;x< cells.length;x++) this.shape[y][x] = cells[x];
         }
     }
 
