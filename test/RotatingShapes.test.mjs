@@ -64,7 +64,7 @@ describe("Rotating 5x5 shape", () => {
     );
   });
 
-  xit("can be rotated left/counter-clockwise", () => {
+  it("can be rotated left/counter-clockwise", () => {
     expect(shape.rotateLeft().toString()).to.equalShape(
       `EJOTY
        DINSX
