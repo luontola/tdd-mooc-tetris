@@ -21,7 +21,7 @@ Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
 _This exercise is part of the [TDD MOOC](https://tdd.mooc.fi) at the University of Helsinki, brought to you
 by [Esko Luontola](https://twitter.com/EskoLuontola) and [Nitor](https://nitor.com/)._
 
-## 🚀 [Start the exercise](docs/level-1.md)
+## 🚀 [Start the exercise](docs/level-0.md)
 
 ## Prerequisites
 
