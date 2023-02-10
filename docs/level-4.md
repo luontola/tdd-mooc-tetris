@@ -21,4 +21,9 @@ Remember the [small steps exercise](https://github.com/luontola/tdd-mooc-small-s
 there, changing only a few lines at a time between running tests. If the tests fail, undo your changes and try another
 tiny change.
 
+After this level, you should have enough code for duplication start becoming an issue. Go through
+the [sparrow decks](https://llewellynfalco.blogspot.com/p/sparrow-decks.html) for duplication, and maybe also the other
+code smells, to train your ability to detect code smells. Then read through your code looking for duplication, and
+refactor to remove it.
+
 ## 🚀 [Continue to the next level](level-5.md)
