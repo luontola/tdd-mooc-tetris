@@ -9,11 +9,14 @@ function initGame() {
   const game = {
     columns: 10,
     rows: 20,
-    tickDuration: 300,
+    tickDuration: 1000,
     nextTick: 0,
   };
-  game.board = new Board(game.columns, game.rows);
   game.scoring = new ScoringSystem();
+  game.board = new Board(game.columns, game.rows);
+  game.board.onClearLine = (lineCount) => {
+    game.scoring.increment(lineCount);
+  };
   game.tetrominoes = new ShuffleBag();
   game.tetrominoes.add(Tetromino.I_SHAPE, 1);
   game.tetrominoes.add(Tetromino.T_SHAPE, 1);
@@ -23,9 +26,6 @@ function initGame() {
   game.tetrominoes.add(Tetromino.S_SHAPE, 1);
   game.tetrominoes.add(Tetromino.Z_SHAPE, 1);
   game.tetrominoes.add(Tetromino.O_SHAPE, 1);
-  game.board.onClearLine = (lineCount) => {
-    game.scoring.increment(lineCount);
-  };
 
   document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
