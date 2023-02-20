@@ -3,6 +3,8 @@ import { ScoringSystem } from "./ScoringSystem.mjs";
 import { ShuffleBag } from "./ShuffleBag.mjs";
 import { Tetromino } from "./Tetromino.mjs";
 
+// TODO: change this code to match the API you have created
+
 function initGame() {
   const canvas = document.getElementById("game");
 
