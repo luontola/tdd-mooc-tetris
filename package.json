@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "http-server": "^14.1.1",
     "mocha": "^8.4.0",
     "prettier": "^2.3.0"
   },
@@ -29,6 +30,7 @@
     "parallel": true
   },
   "scripts": {
+    "start": "http-server src -o / -c-1",
     "test": "mocha --require test/testing.mjs 'test/**/*.test.mjs'",
     "autotest": "npm run test -- --watch",
     "format": "prettier --write ."

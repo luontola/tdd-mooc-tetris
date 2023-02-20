@@ -39,6 +39,10 @@ Run tests continuously
 
     npm run autotest
 
+Start a web UI for playing the game at http://127.0.0.1:8080
+
+    npm run start
+
 Code reformat
 
     npm run format
