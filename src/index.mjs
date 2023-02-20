@@ -72,13 +72,38 @@ function renderGame(game, canvas, timestamp) {
   });
 }
 
+function tick(game) {
+  if (!game.board.hasFalling()) {
+    game.board.drop(game.tetrominoes.draw());
+  } else {
+    game.board.tick();
+  }
+}
+
+const TICK_DURATION_PER_LEVEL = {
+  1: 33 * 15,
+  2: 33 * 13,
+  3: 33 * 11,
+  4: 33 * 9,
+  5: 33 * 7,
+  6: 33 * 5,
+  7: 33 * 4,
+  8: 33 * 3,
+  9: 33 * 2,
+  10: 33,
+};
+
+function adjustDifficulty(game) {
+  const tickDuration = TICK_DURATION_PER_LEVEL[game.scoring.level];
+  if (tickDuration) {
+    game.tickDuration = tickDuration;
+  }
+}
+
 function progressTime(game, timestamp) {
   if (timestamp >= game.nextTick) {
-    if (!game.board.hasFalling()) {
-      game.board.drop(game.tetrominoes.draw());
-    } else {
-      game.board.tick();
-    }
+    tick(game);
+    adjustDifficulty(game);
     game.nextTick = timestamp + game.tickDuration;
   }
 }
