@@ -26,10 +26,11 @@ export class RotatingShape {
   }
 
   rotateRight() {
-    const newShape = newSquareArray(this.#shape.length);
-    for (let row = 0; row < newShape.length; row++) {
-      for (let column = 0; column < newShape[row].length; column++) {
-        newShape[row][column] = this.#shape[2 - column][row];
+    const dimension = this.#shape.length;
+    const newShape = newSquareArray(dimension);
+    for (let row = 0; row < dimension; row++) {
+      for (let column = 0; column < dimension; column++) {
+        newShape[row][column] = this.#shape[dimension - 1 - column][row];
       }
     }
     return new RotatingShape(newShape);
