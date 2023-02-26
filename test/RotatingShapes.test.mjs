@@ -61,4 +61,14 @@ describe("Rotating 5x5 shapes", () => {
        YTOJE`
     );
   });
+
+  it("can be rotated left/counter-clockwise", () => {
+    expect(shape.rotateLeft().toString()).to.equalShape(
+      `EJOTY
+       DINSX
+       CHMRW
+       BGLQV
+       AFKPU`
+    );
+  });
 });
