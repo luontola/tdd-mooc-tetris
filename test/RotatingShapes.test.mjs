@@ -6,6 +6,7 @@ class RotatingShape {
   constructor(shape) {
     this.#shape = shape
       .replaceAll(" ", "")
+      .trim()
       .split("\n")
       .map((row) => row.split(""));
   }
