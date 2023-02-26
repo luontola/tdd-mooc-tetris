@@ -4,30 +4,58 @@ class RotatingShape {
   #shape;
 
   constructor(shape) {
-    this.#shape = shape
-      .replaceAll(" ", "")
-      .trim()
-      .split("\n")
-      .map((row) => row.split(""));
+    if (typeof shape === "string") {
+      this.#shape = shape
+        .replaceAll(" ", "")
+        .trim()
+        .split("\n")
+        .map((row) => row.split(""));
+    } else {
+      this.#shape = shape;
+    }
   }
 
   toString() {
     return this.#shape.map((row) => row.join("")).join("\n") + "\n";
   }
+
+  rotateRight() {
+    const dimension = this.#shape.length;
+    const newShape = new Array(dimension);
+    for (let row = 0; row < dimension; row++) {
+      newShape[row] = new Array(dimension);
+      for (let column = 0; column < dimension; column++) {
+        newShape[row][column] = this.#shape[row][column];
+      }
+    }
+    return new RotatingShape(newShape);
+  }
 }
 
 describe("Rotating 3x3 shapes", () => {
-  it("initial orientation", () => {
-    const shape = new RotatingShape(
-      `ABC
-       DEF
-       GHI`
-    );
+  const shape = new RotatingShape(
+    `ABC
+     DEF
+     GHI`
+  );
 
+  it("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `ABC
        DEF
        GHI`
+    );
+  });
+
+  it("can be rotated right/clockwise", () => {
+    expect(shape.rotateRight().toString()).to.equalShape(
+      `ABC
+       DEF
+       GHI`
+      // TODO: uncomment after refactoring
+      // `GDA
+      //  HEB
+      //  IFC`
     );
   });
 });
