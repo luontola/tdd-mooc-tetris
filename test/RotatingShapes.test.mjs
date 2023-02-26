@@ -24,3 +24,23 @@ describe("Rotating 3x3 shapes", () => {
     );
   });
 });
+
+describe("Rotating 5x5 shapes", () => {
+  const shape = new RotatingShape(
+    `ABCDE
+     FGHIJ
+     KLMNO
+     PQRST
+     UVWXY`
+  );
+
+  it("initial orientation", () => {
+    expect(shape.toString()).to.equalShape(
+      `ABCDE
+       FGHIJ
+       KLMNO
+       PQRST
+       UVWXY`
+    );
+  });
+});
