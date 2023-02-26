@@ -28,6 +28,15 @@ class RotatingShape {
         newShape[row][column] = this.#shape[row][column];
       }
     }
+    newShape[0][0] = this.#shape[2][0];
+    newShape[0][1] = this.#shape[1][0];
+    newShape[0][2] = this.#shape[0][0];
+    newShape[1][0] = this.#shape[2][1];
+    newShape[1][1] = this.#shape[1][1];
+    newShape[1][2] = this.#shape[0][1];
+    newShape[2][0] = this.#shape[2][2];
+    newShape[2][1] = this.#shape[1][2];
+    newShape[2][2] = this.#shape[0][2];
     return new RotatingShape(newShape);
   }
 }
@@ -49,13 +58,9 @@ describe("Rotating 3x3 shapes", () => {
 
   it("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
-      `ABC
-       DEF
-       GHI`
-      // TODO: uncomment after refactoring
-      // `GDA
-      //  HEB
-      //  IFC`
+      `GDA
+       HEB
+       IFC`
     );
   });
 });
