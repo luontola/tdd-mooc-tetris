@@ -1,5 +1,13 @@
 import { expect } from "chai";
 
+function newSquareArray(dimension) {
+  const newShape = new Array(dimension);
+  for (let row = 0; row < dimension; row++) {
+    newShape[row] = new Array(dimension);
+  }
+  return newShape;
+}
+
 class RotatingShape {
   #shape;
 
@@ -20,14 +28,7 @@ class RotatingShape {
   }
 
   rotateRight() {
-    const dimension = this.#shape.length;
-    const newShape = new Array(dimension);
-    for (let row = 0; row < dimension; row++) {
-      newShape[row] = new Array(dimension);
-      for (let column = 0; column < dimension; column++) {
-        newShape[row][column] = this.#shape[row][column];
-      }
-    }
+    const newShape = newSquareArray(this.#shape.length);
     newShape[0][0] = this.#shape[2][0];
     newShape[0][1] = this.#shape[1][0];
     newShape[0][2] = this.#shape[0][0];
