@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { RotatingShape } from "../src/RotatingShape.mjs";
 
-describe("Rotating 3x3 shapes", () => {
+describe("Rotating 3x3 shape", () => {
   const shape = new RotatingShape(
     `ABC
      DEF
@@ -33,7 +33,7 @@ describe("Rotating 3x3 shapes", () => {
   });
 });
 
-describe("Rotating 5x5 shapes", () => {
+describe("Rotating 5x5 shape", () => {
   const shape = new RotatingShape(
     `ABCDE
      FGHIJ

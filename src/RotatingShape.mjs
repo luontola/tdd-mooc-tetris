@@ -1,9 +1,9 @@
-function newSquareArray(dimension) {
-  const newShape = new Array(dimension);
-  for (let row = 0; row < dimension; row++) {
-    newShape[row] = new Array(dimension);
+function newSquareArray(size) {
+  const array = new Array(size);
+  for (let row = 0; row < size; row++) {
+    array[row] = new Array(size);
   }
-  return newShape;
+  return array;
 }
 
 export class RotatingShape {
@@ -26,14 +26,14 @@ export class RotatingShape {
   }
 
   rotateRight() {
-    const dimension = this.#shape.length;
-    const newShape = newSquareArray(dimension);
-    for (let row = 0; row < dimension; row++) {
-      for (let column = 0; column < dimension; column++) {
-        newShape[row][column] = this.#shape[dimension - 1 - column][row];
+    const size = this.#shape.length;
+    const rotated = newSquareArray(size);
+    for (let row = 0; row < size; row++) {
+      for (let column = 0; column < size; column++) {
+        rotated[row][column] = this.#shape[size - 1 - column][row];
       }
     }
-    return new RotatingShape(newShape);
+    return new RotatingShape(rotated);
   }
 
   rotateLeft() {
