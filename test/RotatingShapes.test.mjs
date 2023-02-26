@@ -29,15 +29,11 @@ class RotatingShape {
 
   rotateRight() {
     const newShape = newSquareArray(this.#shape.length);
-    newShape[0][0] = this.#shape[2][0];
-    newShape[0][1] = this.#shape[1][0];
-    newShape[0][2] = this.#shape[0][0];
-    newShape[1][0] = this.#shape[2][1];
-    newShape[1][1] = this.#shape[1][1];
-    newShape[1][2] = this.#shape[0][1];
-    newShape[2][0] = this.#shape[2][2];
-    newShape[2][1] = this.#shape[1][2];
-    newShape[2][2] = this.#shape[0][2];
+    for (let row = 0; row < newShape.length; row++) {
+      for (let column = 0; column < newShape[row].length; column++) {
+        newShape[row][column] = this.#shape[2 - column][row];
+      }
+    }
     return new RotatingShape(newShape);
   }
 }
