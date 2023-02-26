@@ -23,6 +23,14 @@ describe("Rotating 3x3 shapes", () => {
        IFC`
     );
   });
+
+  it("can be rotated left/counter-clockwise", () => {
+    expect(shape.rotateLeft().toString()).to.equalShape(
+      `CFI
+       BEH
+       ADG`
+    );
+  });
 });
 
 describe("Rotating 5x5 shapes", () => {
