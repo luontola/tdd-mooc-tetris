@@ -3,7 +3,7 @@ import { ScoringSystem } from "./ScoringSystem.mjs";
 import { ShuffleBag } from "./ShuffleBag.mjs";
 import { Tetromino } from "./Tetromino.mjs";
 
-// TODO: change this code to match the API you have created
+// TODO: change this code to match the API you have created, if you want to run the game for some manual testing
 
 function initGame() {
   const canvas = document.getElementById("game");
@@ -17,17 +17,18 @@ function initGame() {
   game.scoring = new ScoringSystem();
   game.board = new Board(game.columns, game.rows);
   game.board.onClearLine = (lineCount) => {
-    game.scoring.increment(lineCount);
+    game.scoring.linesCleared(lineCount);
   };
-  game.tetrominoes = new ShuffleBag();
-  game.tetrominoes.add(Tetromino.I_SHAPE, 1);
-  game.tetrominoes.add(Tetromino.T_SHAPE, 1);
-  game.tetrominoes.add(Tetromino.L_SHAPE, 1);
-  game.tetrominoes.add(Tetromino.J_SHAPE, 1);
-  game.tetrominoes.add(Tetromino.T_SHAPE, 1);
-  game.tetrominoes.add(Tetromino.S_SHAPE, 1);
-  game.tetrominoes.add(Tetromino.Z_SHAPE, 1);
-  game.tetrominoes.add(Tetromino.O_SHAPE, 1);
+  game.tetrominoes = new ShuffleBag([
+    Tetromino.I_SHAPE,
+    Tetromino.T_SHAPE,
+    Tetromino.L_SHAPE,
+    Tetromino.J_SHAPE,
+    Tetromino.T_SHAPE,
+    Tetromino.S_SHAPE,
+    Tetromino.Z_SHAPE,
+    Tetromino.O_SHAPE,
+  ]);
 
   document.addEventListener("keydown", (event) => {
     if (event.code === "Space") {
@@ -72,7 +73,7 @@ function progressTime(game, timestamp) {
 
 function tick(game) {
   if (!game.board.hasFalling()) {
-    game.board.drop(game.tetrominoes.draw());
+    game.board.drop(game.tetrominoes.next());
   } else {
     game.board.tick();
   }
