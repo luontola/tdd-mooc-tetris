@@ -1,4 +1,5 @@
 import { shapeToString } from "./shapes.mjs";
+import { Block } from "./Block.mjs";
 
 const EMPTY = ".";
 
@@ -70,6 +71,10 @@ export class Board {
   }
 
   drop(piece) {
+    if (typeof piece === "string") {
+      // enables clearing level 1 without premature introducing a Block class
+      piece = new Block(piece);
+    }
     if (this.#falling) {
       throw new Error("another piece is already falling");
     }
