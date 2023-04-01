@@ -9,7 +9,7 @@ The instructions on what to do are in the [docs directory](docs/). This exercise
 should implement in order. They represent a realistic TDD approach of adding features incrementally.
 
 This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (ES6/ECMAScript 2015),
-[Mocha](https://mochajs.org/) testing framework and [Chai](https://www.chaijs.com/)
+the [Mocha](https://mochajs.org/) testing framework and [Chai](https://www.chaijs.com/)
 assertions, but the concepts are language agnostic. It would be quite easy to translate the example tests to another
 programming language as you go. There also exists an
 older [Java-based predecessor](https://github.com/luontola/tdd-tetris-tutorial) of this exercise.

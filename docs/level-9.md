@@ -3,8 +3,8 @@
 > The player should receive points every time they manage to remove a row. And the more rows are removed at a time, the
 > more points should be given them.
 
-Implement a [scoring system](https://tetris.fandom.com/wiki/Scoring) (the original Nintendo scoring system is quite
-simple).
+Implement a [scoring system](https://tetris.fandom.com/wiki/Scoring). The original Nintendo scoring system is quite
+simple, but you may choose whichever you like.
 
 Since there are many different scoring systems, and it also depends on the game level, it's best to keep the details of
 scoring outside the `Board` class.
