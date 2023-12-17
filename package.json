@@ -18,19 +18,17 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.4.0",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "vite": "^5.0.10",
+    "vitest": "^1.0.4"
   },
   "engines": {
     "node": ">=16",
     "npm": ">=7"
   },
-  "mocha": {
-    "parallel": true
-  },
   "scripts": {
-    "test": "mocha --require test/testing.mjs 'test/**/*.test.mjs'",
-    "autotest": "npm run test -- --watch",
+    "test": "vitest run",
+    "autotest": "vitest watch",
     "format": "prettier --write ."
   }
 }
