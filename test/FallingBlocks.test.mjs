@@ -1,3 +1,4 @@
+import { beforeEach, describe, it } from "vitest";
 import { expect } from "chai";
 import { Board } from "../src/Board.mjs";
 
@@ -29,7 +30,7 @@ describe("Falling blocks", () => {
       );
     });
 
-    xit("it moves down one row per tick", () => {
+    it.skip("it moves down one row per tick", () => {
       board.tick();
 
       expect(board.toString()).to.equalShape(
@@ -39,7 +40,7 @@ describe("Falling blocks", () => {
       );
     });
 
-    xit("at most one block may be falling at a time", () => {
+    it.skip("at most one block may be falling at a time", () => {
       const before = board.toString();
       expect(() => board.drop("Y")).to.throw("already falling");
       const after = board.toString();
@@ -68,7 +69,7 @@ describe("Falling blocks", () => {
       ).to.be.true;
     });
 
-    xit("it stops when it hits the bottom", () => {
+    it.skip("it stops when it hits the bottom", () => {
       board.tick();
 
       expect(board.toString()).to.equalShape(
@@ -104,7 +105,7 @@ describe("Falling blocks", () => {
       ).to.be.true;
     });
 
-    xit("it stops when it hits the other block", () => {
+    it.skip("it stops when it hits the other block", () => {
       board.tick();
 
       expect(board.toString()).to.equalShape(

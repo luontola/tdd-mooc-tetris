@@ -1,8 +1,9 @@
-// @ts-ignore
-declare global {
-  export namespace Chai {
-    interface Assertion {
-      equalShape(shape: string): void;
+declare module "chai" {
+  global {
+    export namespace Chai {
+      interface Assertion {
+        equalShape(shape: string): void;
+      }
     }
   }
 }

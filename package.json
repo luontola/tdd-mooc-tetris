@@ -14,25 +14,25 @@
   },
   "private": true,
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.10",
     "http-server": "^14.1.1",
-    "mocha": "^8.4.0",
-    "prettier": "^2.3.0"
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10",
+    "vitest": "^1.0.4"
   },
   "engines": {
-    "node": ">=16",
-    "npm": ">=7"
-  },
-  "mocha": {
-    "parallel": true
+    "node": ">=20",
+    "npm": ">=10"
   },
   "scripts": {
     "start": "http-server src -o / -c-1",
-    "test": "mocha --require test/testing.mjs 'test/**/*.test.mjs'",
-    "autotest": "npm run test -- --watch",
-    "format": "prettier --write ."
+    "test": "vitest run",
+    "autotest": "vitest watch",
+    "format": "prettier --write .",
+    "lint": "tsc"
   }
 }

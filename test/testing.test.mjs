@@ -1,3 +1,4 @@
+import { it } from "vitest";
 import { expect } from "chai";
 import { normalize } from "./testing.mjs";
 
