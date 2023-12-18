@@ -1,4 +1,4 @@
-import { describe, it } from "vitest";
+import { describe, test } from "vitest";
 import { expect } from "chai";
 import { RotatingShape } from "../src/RotatingShape.mjs";
 
@@ -9,7 +9,7 @@ describe("Rotating 3x3 shape", () => {
      GHI`
   );
 
-  it("initial orientation", () => {
+  test("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `ABC
        DEF
@@ -17,7 +17,7 @@ describe("Rotating 3x3 shape", () => {
     );
   });
 
-  it("can be rotated right/clockwise", () => {
+  test("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
       `GDA
        HEB
@@ -25,7 +25,7 @@ describe("Rotating 3x3 shape", () => {
     );
   });
 
-  it("can be rotated left/counter-clockwise", () => {
+  test("can be rotated left/counter-clockwise", () => {
     expect(shape.rotateLeft().toString()).to.equalShape(
       `CFI
        BEH
@@ -43,7 +43,7 @@ describe("Rotating 5x5 shape", () => {
      UVWXY`
   );
 
-  it("initial orientation", () => {
+  test("initial orientation", () => {
     expect(shape.toString()).to.equalShape(
       `ABCDE
        FGHIJ
@@ -53,7 +53,7 @@ describe("Rotating 5x5 shape", () => {
     );
   });
 
-  it("can be rotated right/clockwise", () => {
+  test("can be rotated right/clockwise", () => {
     expect(shape.rotateRight().toString()).to.equalShape(
       `UPKFA
        VQLGB
@@ -63,7 +63,7 @@ describe("Rotating 5x5 shape", () => {
     );
   });
 
-  it("can be rotated left/counter-clockwise", () => {
+  test("can be rotated left/counter-clockwise", () => {
     expect(shape.rotateLeft().toString()).to.equalShape(
       `EJOTY
        DINSX

@@ -1,4 +1,4 @@
-import { beforeEach, describe, it } from "vitest";
+import { beforeEach, describe, test } from "vitest";
 import { expect } from "chai";
 import { Board } from "../src/Board.mjs";
 import { Tetromino } from "../src/Tetromino.mjs";
@@ -15,7 +15,7 @@ describe("Falling tetrominoes", () => {
     board = new Board(10, 6);
   });
 
-  it("start from the top middle", () => {
+  test("start from the top middle", () => {
     board.drop(Tetromino.T_SHAPE);
 
     expect(board.toString()).to.equalShape(
@@ -28,7 +28,7 @@ describe("Falling tetrominoes", () => {
     );
   });
 
-  it("stop when they hit the bottom", () => {
+  test("stop when they hit the bottom", () => {
     board.drop(Tetromino.T_SHAPE);
     fallToBottom(board);
 
@@ -42,7 +42,7 @@ describe("Falling tetrominoes", () => {
     );
   });
 
-  it("stop when they land on another block", () => {
+  test("stop when they land on another block", () => {
     board.drop(Tetromino.T_SHAPE);
     fallToBottom(board);
     board.drop(Tetromino.T_SHAPE);
