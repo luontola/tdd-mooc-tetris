@@ -14,8 +14,8 @@ file is saved, until you stop it with `Ctrl+C`. At first there should be one fai
 
 Implement enough of [src/Board.mjs](../src/Board.mjs) to make the one failing test pass.
 
-Then uncomment the next test: remove the `/*` `*/` comment marks, or enable a disabled tests by changing `xit` to `it`.
-Uncomment and make the tests pass, one test at a time, until all the tests as passing.
+Then uncomment the next test: remove the `/*` `*/` comment marks or enable a disabled tests by changing `test.skip`
+to `test`. Uncomment and make the tests pass, one test at a time, until all the tests as passing.
 
 P.S. The `equalShape` assertion is a custom assertion to improve the readability of this project's tests. It has been
 implemented in [test/testing.mjs](../test/testing.mjs).

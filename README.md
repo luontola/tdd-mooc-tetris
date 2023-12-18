@@ -8,11 +8,14 @@ it's time to write your own tests in the latter part of this exercise.
 The instructions on what to do are in the [docs directory](docs/). This exercise is split into 10 "levels" which you
 should implement in order. They represent a realistic TDD approach of adding features incrementally.
 
-This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (ES6/ECMAScript 2015),
-the [Mocha](https://mochajs.org/) testing framework and [Chai](https://www.chaijs.com/)
-assertions, but the concepts are language agnostic. It would be quite easy to translate the example tests to another
-programming language as you go. There also exists an
-older [Java-based predecessor](https://github.com/luontola/tdd-tetris-tutorial) of this exercise.
+This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript),
+the [Vitest](https://vitest.dev/) testing framework and [Chai](https://www.chaijs.com/) assertions, but the concepts are
+language agnostic. It would be quite easy to translate the example tests to another programming language as you go.
+There also exists an older [Java-based predecessor](https://github.com/luontola/tdd-tetris-tutorial) of this exercise.
+
+If you'd prefer the static types of [TypeScript](https://www.typescriptlang.org/) over JavaScript, you can rename the
+files from `*.mjs` to `*.ts` and things should work. (Please create an issue or PR if the TypeScript config needs
+changes that would benefit all students; the TS support was added only recently.)
 
 Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
 
