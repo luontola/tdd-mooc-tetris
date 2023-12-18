@@ -1,9 +1,9 @@
-import { shapeToString } from "./shapes.mjs";
+import { Shape, shapeToString } from "./shapes";
 
-export class Block {
+export class Block implements Shape {
   #color;
 
-  constructor(color) {
+  constructor(color: string) {
     this.#color = color;
   }
 
@@ -15,7 +15,7 @@ export class Block {
     return 1;
   }
 
-  blockAt(row, col) {
+  blockAt(row: number, col: number) {
     if (row === 0 && col === 0) {
       return this.#color;
     }

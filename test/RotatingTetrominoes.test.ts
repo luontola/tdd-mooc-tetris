@@ -1,9 +1,9 @@
 import { describe, test } from "vitest";
 import { expect } from "chai";
-import { Tetromino } from "../src/Tetromino.mjs";
+import { Tetromino } from "../src/Tetromino";
 
-function distinctOrientations(shape) {
-  const distinct = new Set();
+function distinctOrientations(shape: Tetromino): Set<string> {
+  const distinct = new Set<string>();
   let goingRight = shape;
   let goingLeft = shape;
   for (let i = 0; i < 10; i++) {

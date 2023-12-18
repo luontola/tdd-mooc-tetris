@@ -1,6 +1,6 @@
-import { shapeToString } from "./shapes.mjs";
+import { Shape, shapeToString } from "./shapes";
 
-function newSquareArray(size) {
+function newSquareArray(size: number): any[][] {
   const array = new Array(size);
   for (let row = 0; row < size; row++) {
     array[row] = new Array(size);
@@ -8,10 +8,10 @@ function newSquareArray(size) {
   return array;
 }
 
-export class RotatingShape {
-  #shape;
+export class RotatingShape implements Shape {
+  #shape: string[][];
 
-  constructor(shape) {
+  constructor(shape: string | string[][]) {
     if (typeof shape === "string") {
       this.#shape = shape
         .replaceAll(" ", "")
@@ -31,7 +31,7 @@ export class RotatingShape {
     return this.#shape.length;
   }
 
-  blockAt(row, col) {
+  blockAt(row: number, col: number) {
     return this.#shape[row][col];
   }
 

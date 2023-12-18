@@ -1,9 +1,9 @@
 import { beforeEach, describe, test } from "vitest";
 import { expect } from "chai";
-import { Board } from "../src/Board.mjs";
+import { Board } from "../src/Board";
 
 describe("Falling blocks", () => {
-  let board;
+  let board: Board;
   beforeEach(() => {
     board = new Board(3, 3);
   });

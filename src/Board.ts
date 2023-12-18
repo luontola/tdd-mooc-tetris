@@ -1,24 +1,24 @@
-import { shapeToString } from "./shapes.mjs";
-import { Block } from "./Block.mjs";
+import { Shape, shapeToString } from "./shapes";
+import { Block } from "./Block";
 
 const EMPTY = ".";
 
 class Point {
-  row;
-  col;
+  row: number;
+  col: number;
 
-  constructor(row, col) {
+  constructor(row: number, col: number) {
     this.row = row;
     this.col = col;
   }
 }
 
-class MovableShape {
-  #shape;
-  #row;
-  #col;
+class MovableShape implements Shape {
+  #shape: Shape;
+  #row: number;
+  #col: number;
 
-  constructor(shape, row, col) {
+  constructor(shape: Shape, row: number, col: number) {
     this.#shape = shape;
     this.#row = row;
     this.#col = col;
@@ -41,27 +41,35 @@ class MovableShape {
     return points;
   }
 
-  blockAt(row, col) {
+  blockAt(row: number, col: number) {
     if (
       row >= this.#row &&
-      row < this.#row + this.#shape.height() &&
+      row < this.height() &&
       col >= this.#col &&
-      col < this.#col + this.#shape.width()
+      col < this.width()
     ) {
       return this.#shape.blockAt(row - this.#row, col - this.#col);
     } else {
       return EMPTY;
     }
   }
+
+  height() {
+    return this.#row + this.#shape.height();
+  }
+
+  width() {
+    return this.#col + this.#shape.width();
+  }
 }
 
-export class Board {
-  #width;
-  #height;
-  #falling = null;
-  #immobile;
+export class Board implements Shape {
+  #width: number;
+  #height: number;
+  #falling: MovableShape | null = null;
+  #immobile: string[][];
 
-  constructor(width, height) {
+  constructor(width: number, height: number) {
     this.#width = width;
     this.#height = height;
     this.#immobile = new Array(height);
@@ -70,7 +78,7 @@ export class Board {
     }
   }
 
-  drop(piece) {
+  drop(piece: Shape | string) {
     if (typeof piece === "string") {
       // enables clearing level 1 without premature introducing a Block class
       piece = new Block(piece);
@@ -89,7 +97,7 @@ export class Board {
     if (!this.hasFalling()) {
       return;
     }
-    const attempt = this.#falling.moveDown();
+    const attempt = this.#falling!.moveDown();
     if (this.#hitsFloor(attempt) || this.#hitsImmobile(attempt)) {
       this.#stopFalling();
     } else {
@@ -97,7 +105,7 @@ export class Board {
     }
   }
 
-  #hitsFloor(falling) {
+  #hitsFloor(falling: MovableShape) {
     for (const block of falling.nonEmptyBlocks()) {
       if (block.row >= this.#height) {
         return true;
@@ -106,7 +114,7 @@ export class Board {
     return false;
   }
 
-  #hitsImmobile(falling) {
+  #hitsImmobile(falling: MovableShape) {
     for (const block of falling.nonEmptyBlocks()) {
       if (this.#immobile[block.row][block.col] !== EMPTY) {
         return true;
@@ -118,7 +126,7 @@ export class Board {
   #stopFalling() {
     for (let row = 0; row < this.height(); row++) {
       for (let col = 0; col < this.width(); col++) {
-        this.#immobile[row][col] = this.blockAt(row, col);
+        this.#immobile[row][col] = this.blockAt(row, col) as string;
       }
     }
     this.#falling = null;
@@ -136,7 +144,7 @@ export class Board {
     return this.#height;
   }
 
-  blockAt(row, col) {
+  blockAt(row: number, col: number) {
     if (this.#falling) {
       const block = this.#falling.blockAt(row, col);
       if (block !== EMPTY) {
