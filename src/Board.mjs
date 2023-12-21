@@ -78,11 +78,7 @@ export class Board {
     if (this.#falling) {
       throw new Error("another piece is already falling");
     }
-    this.#falling = new MovableShape(
-      piece,
-      0,
-      Math.floor((this.#width - piece.width()) / 2)
-    );
+    this.#falling = new MovableShape(piece, 0, Math.floor((this.#width - piece.width()) / 2));
   }
 
   tick() {

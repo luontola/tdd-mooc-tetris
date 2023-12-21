@@ -60,10 +60,7 @@ describe("Falling blocks", () => {
          ...
          .X.`
       );
-      expect(
-        board.hasFalling(),
-        "the player should still be able to move the block"
-      ).to.be.true;
+      expect(board.hasFalling(), "the player should still be able to move the block").to.be.true;
     });
 
     test("it stops when it hits the bottom", () => {
@@ -94,10 +91,7 @@ describe("Falling blocks", () => {
          .Y.
          .X.`
       );
-      expect(
-        board.hasFalling(),
-        "the player should still be able to move the block"
-      ).to.be.true;
+      expect(board.hasFalling(), "the player should still be able to move the block").to.be.true;
     });
 
     test("it stops when it hits the other block", () => {
