@@ -8,6 +8,17 @@ it's time to write your own tests in the latter part of this exercise.
 The instructions on what to do are in the [docs directory](docs/). This exercise is split into 10 "levels" which you
 should implement in order. They represent a realistic TDD approach of adding features incrementally.
 
+Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
+
+## 🚀 [Start the exercise](docs/level-0.md)
+
+---
+
+_This exercise is part of the [TDD MOOC](https://tdd.mooc.fi) at the University of Helsinki, brought to you
+by [Esko Luontola](https://twitter.com/EskoLuontola) and [Nitor](https://nitor.com/)._
+
+## Tooling
+
 This exercise uses [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript),
 the [Vitest](https://vitest.dev/) testing framework and [Chai](https://www.chaijs.com/) assertions, but the concepts are
 language agnostic. It would be quite easy to translate the example tests to another programming language as you go.
@@ -16,15 +27,6 @@ There also exists an older [Java-based predecessor](https://github.com/luontola/
 If you'd prefer the static types of [TypeScript](https://www.typescriptlang.org/) over JavaScript, you can rename the
 files from `*.mjs` to `*.ts` and things should work. (Please create an issue or PR if the TypeScript config needs
 changes that would benefit all students; the TS support was added only recently.)
-
-Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
-
----
-
-_This exercise is part of the [TDD MOOC](https://tdd.mooc.fi) at the University of Helsinki, brought to you
-by [Esko Luontola](https://twitter.com/EskoLuontola) and [Nitor](https://nitor.com/)._
-
-## 🚀 [Start the exercise](docs/level-0.md)
 
 ## Prerequisites
 
