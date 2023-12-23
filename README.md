@@ -8,6 +8,11 @@ it's time to write your own tests in the latter part of this exercise.
 The instructions on what to do are in the [docs directory](docs/). This exercise is split into 10 "levels" which you
 should implement in order. They represent a realistic TDD approach of adding features incrementally.
 
+To get you used to working in [small, safe steps](https://tdd.mooc.fi/2-design#small-safe-steps), there is the
+test [TrainingWheels.test.mjs](test/TrainingWheels.test.mjs) which will fail if you change more than 10 lines of
+production code at a time (similar to the [previous exercise](https://github.com/luontola/tdd-mooc-small-steps)). Make
+it your goal to keep all the tests passing after every change, and commit only when the tests are green.
+
 Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
 
 ## 🚀 [Start the exercise](docs/level-0.md)
