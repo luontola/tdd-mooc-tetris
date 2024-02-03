@@ -1,14 +1,14 @@
 import { RotatingShape } from "./RotatingShape.mjs";
 
 export class Tetromino {
-  static T_SHAPE = new Tetromino(
+  static T_SHAPE = Tetromino.fromString(
     0,
     4,
     `.T.
      TTT
      ...`
   );
-  static I_SHAPE = new Tetromino(
+  static I_SHAPE = Tetromino.fromString(
     0,
     2,
     `.....
@@ -17,7 +17,7 @@ export class Tetromino {
      .....
      .....`
   );
-  static O_SHAPE = new Tetromino(
+  static O_SHAPE = Tetromino.fromString(
     0,
     1,
     `.OO
@@ -28,20 +28,20 @@ export class Tetromino {
   #currentOrientation;
   #orientations;
 
-  constructor(currentOrientation, orientations, initialShape) {
-    if (typeof initialShape === "string") {
-      this.#currentOrientation = currentOrientation;
-      const shape = new RotatingShape(initialShape);
-      this.#orientations = [
-        shape,
-        shape.rotateRight(),
-        shape.rotateRight().rotateRight(),
-        shape.rotateRight().rotateRight().rotateRight(),
-      ].slice(0, orientations);
-    } else {
-      this.#currentOrientation = (currentOrientation + orientations.length) % orientations.length;
-      this.#orientations = orientations;
-    }
+  static fromString(currentOrientation, orientationCount, initialShape) {
+    const shape = new RotatingShape(initialShape);
+    const orientations = [
+      shape,
+      shape.rotateRight(),
+      shape.rotateRight().rotateRight(),
+      shape.rotateRight().rotateRight().rotateRight(),
+    ].slice(0, orientationCount);
+    return new Tetromino(currentOrientation, orientations);
+  }
+
+  constructor(currentOrientation, orientations) {
+    this.#currentOrientation = (currentOrientation + orientations.length) % orientations.length;
+    this.#orientations = orientations;
   }
 
   rotateRight() {
