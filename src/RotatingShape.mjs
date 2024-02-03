@@ -11,16 +11,18 @@ function newSquareArray(size) {
 export class RotatingShape {
   #shape;
 
-  constructor(shape) {
-    if (typeof shape === "string") {
-      this.#shape = shape
+  static fromString(shape) {
+    return new RotatingShape(
+      shape
         .replaceAll(" ", "")
         .trim()
         .split("\n")
-        .map((row) => row.split(""));
-    } else {
-      this.#shape = shape;
-    }
+        .map((row) => row.split(""))
+    );
+  }
+
+  constructor(shape) {
+    this.#shape = shape;
   }
 
   width() {
