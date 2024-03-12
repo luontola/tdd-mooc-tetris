@@ -26,8 +26,8 @@ See the course material's discussion on [testing randomness](https://tdd.mooc.fi
 ## 🥳 That's all, folks
 
 Obviously the game is not yet complete, because the game loop and UI are missing. However, since testing the UI is much
-harder than backend code, it's left outside this exercise.
+harder than testing pure business logic, it's left outside this exercise.
 
-There is a minimal UI at [src/index.mjs](../src/index.mjs) which you can with minor modifications update to work with
-your code. Start the UI with `npm run start` and do some manual testing to see if you overlooked some edge cases when
-writing your tests.
+There is a minimal UI at [src/index.mjs](../src/index.mjs), which you should be able to update to work with your code
+after some minor modifications. Start the UI with `npm run start` and do some manual testing to see if you overlooked
+some edge cases when writing your tests.
