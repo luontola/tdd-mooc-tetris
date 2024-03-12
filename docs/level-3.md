@@ -19,4 +19,4 @@ avoid the tight coupling between a subclass and its superclass. There's also
 the [Liskov Substitution Principle](https://davesquared.net/2009/01/introduction-to-solid-principles-of-oo.html)
 which every inheritor should follow to avoid breaking things.
 
-## 🚀 [Continue to the next level](level-4.md)
+## 27% done 🚀 [Continue to the next level](level-4.md)

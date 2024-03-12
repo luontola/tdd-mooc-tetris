@@ -14,4 +14,4 @@ Little algorithms like this rotation can be derived using just TDD. First write 
 work: copy each block individually to its rotated position (~9 lines of code). Then remove duplication to produce a
 generic algorithm (~1 line of code).
 
-## 🚀 [Continue to the next level](level-3.md)
+## 18% done 🚀 [Continue to the next level](level-3.md)

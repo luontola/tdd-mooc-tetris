@@ -23,7 +23,7 @@ do [property-based testing](https://increment.com/testing/in-praise-of-property-
 and assert generic invariants instead of specific examples. (You won't need a property-based testing library here.)
 See the course material's discussion on [testing randomness](https://tdd.mooc.fi/3-challenges#randomness).
 
-## 🥳 That's all, folks
+## 100% done 🥳
 
 Obviously the game is not yet complete, because the game loop and UI are missing. However, since testing the UI is much
 harder than testing pure business logic, it's left outside this exercise.

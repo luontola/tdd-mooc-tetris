@@ -9,4 +9,4 @@ You're now responsible for covering all the corner cases. Here are the features 
 - [wall kick](https://tetris.fandom.com/wiki/Wall_kick): when it is up against a wall (or other blocks) and is rotated,
   but there is no room to rotate, move it away from the wall if possible
 
-## 🚀 [Continue to the next level](level-7.md)
+## 64% done 🚀 [Continue to the next level](level-7.md)

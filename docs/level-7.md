@@ -32,4 +32,4 @@ Some possible refactoring strategies:
   the beginning of a test, instead create operations which let you easily set the board's initial state. Who knows,
   maybe they'll be useful also in production code (e.g. to implement save states).
 
-## 🚀 [Continue to the next level](level-8.md)
+## 73% done 🚀 [Continue to the next level](level-8.md)

@@ -20,4 +20,4 @@ to `test`. Uncomment and make the tests pass, one test at a time, until all the 
 P.S. The `equalShape` assertion is a custom assertion to improve the readability of this project's tests. It has been
 implemented in [test/testing.mjs](../test/testing.mjs).
 
-## 🚀 [Continue to the next level](level-2.md)
+## 9% done 🚀 [Continue to the next level](level-2.md)

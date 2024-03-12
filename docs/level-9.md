@@ -16,4 +16,4 @@ tested in isolation, without a scoring system.
 
 Then implement the scoring rules as an object which listens for the notifications from `Board`.
 
-## 🚀 [Continue to the next level](level-10.md)
+## 91% done 🚀 [Continue to the next level](level-10.md)

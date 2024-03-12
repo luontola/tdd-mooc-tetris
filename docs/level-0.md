@@ -17,4 +17,4 @@ the currently failing test pass, while at the same time not blocking progress to
 ideal design. Always keep an open mind and look for indicators that your current design doesn't fit the problem well,
 and then start refactoring toward a more suitable design.
 
-## 🚀 [Continue to the next level](level-1.md)
+## 1% done 🚀 [Continue to the next level](level-1.md)

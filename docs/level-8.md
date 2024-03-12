@@ -6,4 +6,4 @@
 
 Implement [clearing lines](https://tetris.fandom.com/wiki/Line_clear).
 
-## 🚀 [Continue to the next level](level-9.md)
+## 82% done 🚀 [Continue to the next level](level-9.md)

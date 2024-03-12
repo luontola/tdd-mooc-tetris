@@ -21,4 +21,4 @@ cases:
 Remember to follow the [three laws of TDD](https://tdd.mooc.fi/1-tdd#three-laws-of-tdd) and not write more than one
 failing test before making it pass.
 
-## 🚀 [Continue to the next level](level-6.md)
+## 55% done 🚀 [Continue to the next level](level-6.md)

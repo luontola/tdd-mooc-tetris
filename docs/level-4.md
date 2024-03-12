@@ -28,4 +28,4 @@ the [sparrow decks](https://llewellynfalco.blogspot.com/p/sparrow-decks.html) fo
 code smells, to train your ability to detect code smells. Then read through your code looking for duplication, and
 refactor to remove it.
 
-## 🚀 [Continue to the next level](level-5.md)
+## 45% done 🚀 [Continue to the next level](level-5.md)
