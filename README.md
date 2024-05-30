@@ -11,7 +11,7 @@ should implement in order. They represent a realistic TDD approach of adding fea
 To get you used to working in [small, safe steps](https://tdd.mooc.fi/2-design#small-safe-steps), there is the
 test [TrainingWheels.test.mjs](test/TrainingWheels.test.mjs) which will fail if you change more than 10 lines of
 production code at a time (similar to the [previous exercise](https://github.com/luontola/tdd-mooc-small-steps)). Make
-it your goal to keep all the tests passing after every change, and commit only when the tests are green.
+it your goal to keep all the tests passing after every change, and commit only when the tests are passing.
 
 Refer to [the course material](https://tdd.mooc.fi) to learn more about TDD.
 

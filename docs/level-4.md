@@ -9,8 +9,8 @@ The `Board` class needs to be updated to work with complex block shapes. You wil
 where the old code assumes 1×1 blocks (and a 3×3 board). Create an appropriate abstraction so that the same code works
 for all block shapes.
 
-It may be useful to temporarily disable the one new failing test, so that you can refactor on green and make the next
-test easier to pass.
+It may be useful to temporarily disable the one new failing test, so that you can refactor while all tests are passing.
+Then refactor with the goal of making the next test easier to pass.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">for each desired change, make the change easy (warning: this may be hard), then make the easy change</p>&mdash; Kent Beck (@KentBeck) <a href="https://twitter.com/KentBeck/status/250733358307500032?ref_src=twsrc%5Etfw">September 25, 2012</a></blockquote>
 
