@@ -9,7 +9,7 @@ Always start by thinking about the problem:
 
 3. Think about what kind of design could be used to satisfy those requirements.
 
-After you have spent 15 minutes or more thinking about the problem, you should have a rough guess that how to implement
+After you have spent at least 15 minutes thinking about the problem, you should have a rough guess that how to implement
 the game. _The guess will likely be wrong_, because you will never again know as little about Tetris as now.
 
 Next when you'll start implementing Tetris, hold back from implementing more of your design than is necessary to make
