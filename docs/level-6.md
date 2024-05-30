@@ -2,7 +2,9 @@
 
 > Let's keep adding player controls: rotations.
 
-You're now responsible for covering all the corner cases. Here are the features to be implemented:
+You are now responsible for covering all the corner cases and coming up with descriptive test names.
+
+Here are the features to be implemented:
 
 - a falling tetromino can be rotated
 - it cannot be rotated when there is no room to rotate
