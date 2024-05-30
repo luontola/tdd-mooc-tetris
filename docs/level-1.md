@@ -5,7 +5,9 @@
 > You can't have a Tetris without falling tetrominoes, so that would be one place to start. But already that is quite a
 > complex feature.
 >
-> With TDD we prefer to _start small_. So let's start by implementing falling 1×1 blocks.
+> With TDD we prefer to _start small_, so that we can get something working quickly and learn more about the problem.
+> Let's [simplify](https://tdd.mooc.fi/2-design#four-strategies) the problem by using just 1×1 blocks instead of
+> full-sized tetrominoes.
 
 Open the [test/FallingBlocks.test.mjs](../test/FallingBlocks.test.mjs) file.
 
@@ -14,8 +16,8 @@ file is saved, until you stop it with `Ctrl+C`. At first there should be one fai
 
 Implement enough of [src/Board.mjs](../src/Board.mjs) to make the one failing test pass.
 
-Then uncomment the next test: remove the `/*` `*/` comment marks or enable a disabled tests by changing `test.skip`
-to `test`. Uncomment and make the tests pass, one test at a time, until all the tests as passing.
+Then uncomment the next test: remove the `/*` `*/` comment marks, or enable a disabled tests by changing `test.skip`
+to `test`. Uncomment and make the tests pass, one test at a time, until all the tests are passing.
 
 P.S. The `equalShape` assertion is a custom assertion to improve the readability of this project's tests. It has been
 implemented in [test/testing.mjs](../test/testing.mjs).
