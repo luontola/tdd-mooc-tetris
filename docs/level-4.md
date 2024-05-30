@@ -7,7 +7,8 @@ one.
 
 The `Board` class needs to be updated to work with complex block shapes. You will need to find and update every place
 where the old code assumes 1×1 blocks (and a 3×3 board). Create an appropriate abstraction so that the same code works
-for all block shapes.
+for all block shapes. For example, extract the 1×1 block (which is used in `FallingBlocks.test.mjs`) into a class which
+has the same interface as the tetrominoes, but whose width and height are 1.
 
 It may be useful to temporarily disable the one new failing test, so that you can refactor while all tests are passing.
 Then refactor with the goal of making the next test easier to pass.
