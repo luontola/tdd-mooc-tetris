@@ -2,8 +2,8 @@
 
 In this exercise you will be implementing a Tetris game using Test-Driven Development (TDD). The first couple dozen
 tests have already been written for you - just uncomment them one by one. This should help to get over the initial
-hurdle of knowing what tests to write when getting started with TDD. After that the training wheels are removed, and
-it's time to write your own tests in the latter part of this exercise.
+hurdle of knowing what tests to write when getting started with TDD. After that you'll be eased into writing your own
+tests.
 
 The instructions on what to do are in the [docs directory](docs/). This exercise is split into 10 "levels" which you
 should implement in order. They represent a realistic TDD approach of adding features incrementally.
